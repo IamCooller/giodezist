@@ -20,9 +20,9 @@
                             <div class="MainServices__item_content">
                                 <div class="MainServices__item-title">{{$service->ServiceTitle}}</div>
                                 <nav>
+                                @foreach($services_single as $service_single)
                                     <a href="single-services.html">Бурение</a>
-                                    <a href="#">Водопонижение</a>
-                                    <a href="#">Определение типов грунтов</a>
+                                    @endforeach
                                 </nav>
                             </div>
                         </div>

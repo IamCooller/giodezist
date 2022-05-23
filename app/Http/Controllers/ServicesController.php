@@ -23,4 +23,11 @@ class ServicesController extends Controller
         dd( $servicesHas);
         return view('frontend/services/index', compact('services','services_single', 'servicesHas'));
     }
+
+    public function show($id)
+    {
+        $service = ServicesSingle::findOrFail($id);
+    
+        return view('frontend/services/show', compact('service'));
+    }
 }

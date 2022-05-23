@@ -16,7 +16,7 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
-use SleepingOwl\Admin\Display\Tree\BaumNodeType;
+
 /**
  * Class Services
  *
@@ -56,8 +56,8 @@ class Services extends Section implements Initializable
      */
     public function onDisplay($payload = [])
     {
-        return AdminDisplay::tree()->setValue('ServiceNumber_oz');
-      /*   $columns = [
+        
+        $columns = [
             AdminColumn::text('ServiceNumber_oz', 'Порядковый номер')->setHtmlAttribute('class', 'text-center'),
          
           
@@ -80,7 +80,7 @@ class Services extends Section implements Initializable
 
         $display->getColumnFilters()->setPlacement('card.heading');
 
-        return $display; */
+        return $display;
     }
 
     /**
