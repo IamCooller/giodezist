@@ -197,7 +197,7 @@
                                     </li>
 
                                     <li class="has-childs about_link">
-                                        <a>О нас</a>
+                                        <a>{{trans('О нас')}}</a>
                                         <div class="labgvidg-header__icon">
                                             <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.5 4L0.5 0H8.5L4.5 4Z" fill="#101C5A"></path>
@@ -271,28 +271,15 @@
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__wrapper_col footer__projects">
-                    <div class="footer-title">{{trans('Проекты')}}</div>
+                    <div class="footer-title">{{trans('Объекты')}}</div>
                     <ul class="footer__projects_list">
+                        @foreach($objects as $object)
                         <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/about.png" alt="Project" /></a>
+                            <a href="{{ route('objects.show',['id'=>$object->id]) }}" class="footer__projects_list-item"><img src="/{{$object->ObjectImg}}" alt="{{$object->TitleObject}}" /></a>
                         </li>
-                        <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/footerP2.png" alt="Project" /></a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/footerP3.png" alt="Project" /></a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/footerP1.png" alt="Project" /></a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/footerP2.png" alt="Project" /></a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__projects_list-item"><img src="/img/MainPage/footerP3.png" alt="Project" /></a>
-                        </li>
+                        @endforeach
                     </ul>
-                    <a href="{{route('objects')}}" class="footer__projects-link">{{trans('Все проекты')}}</a>
+                    <a href="{{route('objects')}}" class="footer__projects-link">{{trans('Все Объекты')}}</a>
                 </div>
                 <div class="footer__wrapper_col footer__services">
                     <div class="footer-title">{{trans('УСЛУГИ')}}</div>

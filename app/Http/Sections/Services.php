@@ -101,7 +101,7 @@ class Services extends Section implements Initializable
                 ->addColumn([
                     AdminFormElement::text('ServiceTitle_ru', 'Название услуги'),
                     AdminFormElement::html('<hr>'),
-                    AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер')->unique(),
+                    AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер'),
                 ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
                 ->addColumn([
                     AdminFormElement::image('ServiceImg_ru', 'Изображение'),
@@ -120,7 +120,7 @@ class Services extends Section implements Initializable
             ->addColumn([
                 AdminFormElement::text('ServiceTitle_oz', 'Название услуги'),
                 AdminFormElement::html('<hr>'),
-                AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер')->unique(),
+                AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
             ->addColumn([
                 AdminFormElement::image('ServiceImg_oz', 'Изображение'),
@@ -138,7 +138,7 @@ class Services extends Section implements Initializable
                 ->addColumn([
                     AdminFormElement::text('ServiceTitle_en', 'Название услуги'),
                     AdminFormElement::html('<hr>'),
-                    AdminFormElement::number('ServiceNumber_en', 'Порядковый номер')->unique(),
+                    AdminFormElement::number('ServiceNumber_en', 'Порядковый номер'),
                 ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
                 ->addColumn([
                     AdminFormElement::image('ServiceImg_en', 'Изображение'),

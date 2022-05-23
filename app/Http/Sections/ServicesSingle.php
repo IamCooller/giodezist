@@ -108,7 +108,7 @@ class ServicesSingle extends Section implements Initializable
                   
                     AdminFormElement::image('ServiceImg_ru', 'Изображение услуги'),
                     AdminFormElement::text('TitleService_ru', 'Название услуги'),
-                    AdminFormElement::wysiwyg('SubTitleService_ru', 'Краткое описание услуги'),
+                    AdminFormElement::text('SubTitleService_ru', 'Краткое описание услуги'),
                    
 
                     AdminFormElement::html('<hr>'),
@@ -122,8 +122,13 @@ class ServicesSingle extends Section implements Initializable
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
+<<<<<<< Updated upstream
                 
                 AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер')->unique(),
+=======
+                AdminFormElement::select('MainService_ru', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_ru'),
+                AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер'),
+>>>>>>> Stashed changes
             ]))->setLabel('RU');
                 return $tab;
         });
@@ -146,16 +151,21 @@ class ServicesSingle extends Section implements Initializable
                
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6')
                 ->addColumn([
-                    AdminFormElement::text('BlockOneService_oz', 'Первый блок услуги'),
-                    AdminFormElement::text('BlockTwoService_oz', 'Второй блок услуги'),
-                    AdminFormElement::text('BlockTwoImgService_oz', 'Изображение второго блока'),
-                    AdminFormElement::text('BlockThreeService_oz', 'Третий блок услуги'),
+                    AdminFormElement::wysiwyg('BlockOneService_oz', 'Первый блок услуги'),
+                    AdminFormElement::wysiwyg('BlockTwoService_oz', 'Второй блок услуги'),
+                    AdminFormElement::image('BlockTwoImgService_oz', 'Изображение второго блока'),
+                    AdminFormElement::wysiwyg('BlockThreeService_oz', 'Третий блок услуги'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
+<<<<<<< Updated upstream
                 //AdminFormElement::select('service_id', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_oz'),
                 AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер')->unique(),
+=======
+                AdminFormElement::select('MainService_oz', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_oz'),
+                AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер'),
+>>>>>>> Stashed changes
             ]))->setLabel('OZ');
             return $tab;
         });
@@ -171,22 +181,27 @@ class ServicesSingle extends Section implements Initializable
                   
                     AdminFormElement::image('ServiceImg_en', 'Изображение услуги'),
                     AdminFormElement::text('TitleService_en', 'Название услуги'),
-                    AdminFormElement::text('SubTitleService_en', 'Краткое описание услуги'),
+                    AdminFormElement::text('SubTitleService_en', 'Краткое описание услуги')
                    
 
 
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6')
                 ->addColumn([
-                    AdminFormElement::text('BlockOneService_en', 'Первый блок услуги'),
-                    AdminFormElement::text('BlockTwoService_en', 'Второй блок услуги'),
-                    AdminFormElement::text('BlockTwoImgService_en', 'Изображение второго блока'),
+                    AdminFormElement::wysiwyg('BlockOneService_en', 'Первый блок услуги'),
+                    AdminFormElement::wysiwyg('BlockTwoService_en', 'Второй блок услуги'),
+                    AdminFormElement::image('BlockTwoImgService_en', 'Изображение второго блока'),
                     AdminFormElement::text('BlockThreeService_en', 'Третий блок услуги'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
+<<<<<<< Updated upstream
                 //AdminFormElement::select('service_id', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_en'),
                 AdminFormElement::number('ServiceNumber_en', 'Порядковый номер')->unique(),
+=======
+                AdminFormElement::select('MainService_en', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_en'),
+                AdminFormElement::number('ServiceNumber_en', 'Порядковый номер'),
+>>>>>>> Stashed changes
             ]))->setLabel('EN');
             return $tab;
         });

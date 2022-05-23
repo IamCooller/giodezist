@@ -17,9 +17,17 @@ class ServicesController extends Controller
     {
         $locale = App::getLocale();
         $number = 'ServiceNumber_' . $locale;
+<<<<<<< Updated upstream
         $categories = Services::orderBy($number)->get();
         
         return view('frontend/services/index', compact('categories'));
+=======
+        $services = Services::orderBy($number)->get();
+        $services_single = ServicesSingle::orderBy('id')->get();
+        $servicesHas = ServicesSingle::find(1)->Services;
+     
+        return view('frontend/services/index', compact('services','services_single', 'servicesHas'));
+>>>>>>> Stashed changes
     }
 
     public function show($id)

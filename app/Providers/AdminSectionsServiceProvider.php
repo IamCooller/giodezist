@@ -25,6 +25,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         'App\Models\HomePage' => 'App\Http\Sections\HomePage',
         'App\Models\Services' => 'App\Http\Sections\Services',
         'App\Models\ServicesSingle' => 'App\Http\Sections\ServicesSingle',
+        'App\Models\Objects'    => 'App\Http\Sections\Objects',
     ];
 
     

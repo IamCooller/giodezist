@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Objects;
+use App;
 class ObjectsController extends Controller
 {
     
@@ -14,6 +15,21 @@ class ObjectsController extends Controller
      */
     public function index()
     {
-        return view('frontend/objects/index');
+        $locale = App::getLocale();
+        $number = 'ObjectNumber_' . $locale;
+        $title = 'TitleObject_' . $locale;
+        $objects = Objects::orderBy($number)->where( $title ,'!=',NULL)->paginate(
+            $perPage = 9, $columns = ['*'], $pageName = 'objects', $onFirstPage = 0
+        );
+       
+        return view('frontend/objects/index', compact('objects'));
+    }
+
+    public function show($id)
+    {
+        $objects = Objects::all();
+        $object = Objects::findOrFail($id);
+        
+        return view('frontend/objects/show', compact('object','objects'));
     }
 }

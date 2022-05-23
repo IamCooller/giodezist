@@ -1175,7 +1175,7 @@ ul.breadcrumb li a:hover
 		position: relative
 		&-img
 			width: 100%
-			height: 248px
+			min-height: 248px
 			transition: .3s all
 		&_content
 			display: flex
@@ -1261,7 +1261,8 @@ ul.paggination
 			img
 				height: 100%
 				position: absolute
-				width: 50%
+				max-width: 50%
+				width: auto
 				right: 0
 	&-title
 		color: $white
@@ -2724,8 +2725,11 @@ ul.paggination
 				min-height: 350px
 				order: -1
 				img
-					width: 100%
+					width: auto
 					height: inherit
+					display: block
+					margin: auto
+					position: relative
 			&_left
 				padding-bottom: 50px
 		&__one::after
