@@ -93,8 +93,11 @@ class Services extends Model
         return $this->{$column};
     }
 
-    public function uslugi() {
-        return $this->hasMany(ServicesSingle::class, 'id', 'ServiceTitle_ru');}
+    public function service()
+    {
+        return $this->hasMany(ServicesSingle::class, 'service_id', 'id');
+        
+    }
 
    
 

@@ -122,7 +122,7 @@ class ServicesSingle extends Section implements Initializable
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
-                AdminFormElement::select('MainService_ru', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_ru'),
+                
                 AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер')->unique(),
             ]))->setLabel('RU');
                 return $tab;
@@ -154,7 +154,7 @@ class ServicesSingle extends Section implements Initializable
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
-                AdminFormElement::select('MainService_oz', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_oz'),
+                //AdminFormElement::select('service_id', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_oz'),
                 AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер')->unique(),
             ]))->setLabel('OZ');
             return $tab;
@@ -185,7 +185,7 @@ class ServicesSingle extends Section implements Initializable
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
                 AdminFormElement::html('<hr>'),
-                AdminFormElement::select('MainService_en', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_en'),
+                //AdminFormElement::select('service_id', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_en'),
                 AdminFormElement::number('ServiceNumber_en', 'Порядковый номер')->unique(),
             ]))->setLabel('EN');
             return $tab;
@@ -193,8 +193,8 @@ class ServicesSingle extends Section implements Initializable
 
 
         $form = AdminForm::card()->addBody([
-            $tabs
-           
+            $tabs,
+           AdminFormElement::select('service_id', 'Главная услуга', Services::class)->setDisplay('ServiceTitle_ru')
         ]);
 
      

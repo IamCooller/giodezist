@@ -79,9 +79,11 @@ class ServicesSingle extends Model
         'updated_at'
     ];
 
-    public function service() {
-        return $this->hasOne(Services::class, 'ServiceTitle_ru', 'id');
+    public function category()
+    {
+        return $this->hasOne(Services::class, 'id', 'service_id');
     }
+    
     public function getTitleAttribute()
     {
         $locale = App::getLocale();

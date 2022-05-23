@@ -12,7 +12,7 @@
                 <div class="MainServices__wrapper">
                     <div class="title">{{trans('УСЛУГИ')}}</div>
                     <div class="MainServices__wrapper_list">
-                        @foreach($services as $service)
+                        @foreach($categories as $service)
                         <div class="MainServices__item">
                             <div class="MainServices__item_img">
                                 <img src="/{{$service->ServiceImg}}" />
@@ -20,8 +20,8 @@
                             <div class="MainServices__item_content">
                                 <div class="MainServices__item-title">{{$service->ServiceTitle}}</div>
                                 <nav>
-                                @foreach($services_single as $service_single)
-                                    <a href="single-services.html">Бурение</a>
+                                @foreach($service->service as $service_single)
+                                    <a href="single-services.html">{{$service_single->title}}</a>
                                     @endforeach
                                 </nav>
                             </div>
