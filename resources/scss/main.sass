@@ -45,13 +45,23 @@ body
 		@include adaptiv-value('font-size', 36, 18, 1)
 	&-form
 		&__input
+			position: relative
 			input
 				background: none
 				width: 100%
 				height: 48px
 				border-bottom: 1px solid $black
 				margin-bottom: 24px
-
+				.errorInput
+					border-bottom: 1px solid red
+				&:focus
+					border-bottom: 1px solid #263475
+			.error
+				position: absolute
+				width: 100%
+				left: 0
+				bottom: 0
+				color: red
 		&__submit
 			height: 64px
 			width: 177px
@@ -84,7 +94,35 @@ ul.breadcrumb li
 	font-weight: 500
 ul.breadcrumb-single li
 	color: #fff
-
+#successForm
+	display: block
+	max-width: 500px
+	margin: 0 auto
+	height: 110px
+	position: relative
+	background: #fff
+	strong
+		margin-top: auto
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 100%
+		color: green
+#successFormError
+	display: block
+	max-width: 500px
+	margin: 0 auto
+	height: 110px
+	position: relative
+	background: #fff
+	strong
+		margin-top: auto
+		display: flex
+		color: red
+		align-items: center
+		justify-content: center
+		height: 100%
+	 
 
 ul.breadcrumb li+li:before 
 	padding: 5px 14px
@@ -129,7 +167,8 @@ ul.breadcrumb li a:hover
 	justify-content: center
 	position: relative
 	width: 160px
-	padding-right: 16px
+	padding-right: 40px
+	padding-left: 10px
 	transition: .3s all
 	&::after
 		content: ''
@@ -185,6 +224,7 @@ ul.breadcrumb li a:hover
 		align-items: center
 		width: 100%
 		max-width: 480px
+		grid-gap: 5px
 		a
 			font-style: normal
 			font-weight: 600
@@ -438,18 +478,16 @@ ul.breadcrumb li a:hover
 			padding-top: 64px
 			padding-bottom: 84px
 	
-		& li
+		& li,p
 			position: relative
 			padding-left: 50px
-			
-			p
-				font-style: normal
-				font-weight: 500
-				@include adaptiv-value('font-size', 26, 16, 1)
-				line-height: 31px
-				font-feature-settings: 'pnum' on, 'lnum' on
-				color: $white
-				max-width: 320px
+			font-style: normal
+			font-weight: 500
+			@include adaptiv-value('font-size', 26, 16, 1)
+			line-height: 31px
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: $white
+			max-width: 320px
 			&::before
 				content: ''
 				background: no-repeat url("data:image/svg+xml,%3Csvg width='29' height='36' viewBox='0 0 29 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='18' r='3' fill='white'/%3E%3Ccircle cx='11' cy='18' r='10' stroke='%233243A0' stroke-width='2'/%3E%3Cpath d='M11 35C20.3888 35 28 27.3888 28 18C28 8.61116 20.3888 1 11 1' stroke='%233243A0' stroke-width='2'/%3E%3C/svg%3E%0A")
@@ -615,7 +653,7 @@ ul.breadcrumb li a:hover
 		&-img
 			width: 100%
 			transition: .3s all
-			padding-top: 60%
+			height: auto
 		&:hover
 			> .ibg
 				transform: scale(1.1)
@@ -637,7 +675,8 @@ ul.breadcrumb li a:hover
 	&-link
 		color: $white
 		border: 1.5px solid $white
-		width: 174px
+		min-width: 174px
+		width: fit-content
 		&::after
 			background: no-repeat url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.172 9.00008L5.92552e-07 9.00007L7.67397e-07 7.00007L12.172 7.00008L6.808 1.63608L8.222 0.222076L16 8.00008L8.222 15.7781L6.808 14.3641L12.172 9.00008Z' fill='white'/%3E%3C/svg%3E%0A")
 	&__wrapper
@@ -655,7 +694,7 @@ ul.breadcrumb li a:hover
 				overflow: hidden
 				&-img
 					width: 100%
-					padding-top: 60%
+					height: auto
 					transition: .3s all
 				&-title
 					font-style: normal
@@ -1423,7 +1462,8 @@ ul.paggination
 			margin-bottom: 54px
 			align-items: center
 			.linkMore
-				width: 176px
+				min-width: 176px
+				width: fit-content
 
 
 //////////MainNews//////////
@@ -1500,7 +1540,7 @@ ul.paggination
 				display: flex
 				align-items: center
 				margin-top: 27px
-				i
+				img
 					margin-right: 9px
 		.slaider__buttons
 			
@@ -1587,7 +1627,7 @@ ul.paggination
 				line-height: 150%
 				font-feature-settings: 'pnum' on, 'lnum' on
 				color: $black
-				i
+				img
 					margin-right: 9px
 			&_bottom
 				overflow: hidden
@@ -1653,6 +1693,8 @@ ul.paggination
 		margin-bottom: 52px
 		> *
 			color: $black
+		img
+			height: auto
 		p,a,span
 			font-style: normal
 			font-weight: 500
@@ -1949,6 +1991,14 @@ ul.paggination
 			bottom: auto
 			transform: rotate(21.43deg)
 			z-index: -1
+	&__list
+		a
+			width: 100%
+			height: 100%
+			iframe
+				width: 100%
+				min-height: 220px
+				height: 100%
 
 ////////////MainDepartaments/////////
 .MainDepartaments
@@ -2220,8 +2270,11 @@ ul.paggination
 		&_wrapper
 			display: flex
 			flex-direction: column
-			
+
 			justify-content: space-between
+			&_input,
+			&_textarea
+				position: relative
 			input
 				width: 100%
 				line-height: 150%
@@ -2231,6 +2284,8 @@ ul.paggination
 				text-align: justify
 				color: #263475
 				@include adaptiv-value('font-size', 16, 14, 1)
+				&:focus
+					border-bottom: 1px solid #263475
 			
 			#file
 				width: 100%
@@ -2243,6 +2298,12 @@ ul.paggination
 					max-width: 50%
 					/* overflow: hidden */
 					cursor: pointer
+					.error
+						position: absolute
+						bottom: -55px
+						width: 100%
+						left: 0
+						color: red
 					& >
 						div
 							height: 100%
@@ -2279,6 +2340,24 @@ ul.paggination
 				color: $black
 				resize: none
 				border-bottom: 1px solid #2634755e
+				&:focus
+					border-bottom: 1px solid #263475
+			
+			.focus.errorInput
+				border-bottom: 1px solid red !important
+			.error
+				position: absolute
+				bottom: 5px
+				width: 100%
+				left: 0
+				color: red
+			&_textarea
+				.error
+					position: absolute
+					bottom: -20px
+					width: 100%
+					left: 0
+					color: red
 		&-button
 			margin-right: auto
 			margin-top: 48px
@@ -2398,6 +2477,7 @@ ul.paggination
 					grid-gap: 42px
 					&_input
 						width: 45%
+						position: relative
 						input
 							width: 100%
 							line-height: 150%
@@ -2407,8 +2487,19 @@ ul.paggination
 							text-align: justify
 							color: #263475
 							font-size: 16px
+							&:focus
+								border-bottom: 1px solid #263475
+							.errorInput
+								border-bottom: 1px solid red
+						.error
+							position: absolute
+							width: 100%
+							left: 0
+							bottom: -20px
+							color: red
 					&_textarea
 						width: 100%
+						position: relative
 						textarea
 							height: 66px
 							line-height: 150%
@@ -2419,6 +2510,16 @@ ul.paggination
 							color: #101C5A
 							resize: none
 							border-bottom: 1px solid #2634755e
+							&:focus
+								border-bottom: 1px solid #263475
+							.errorInput
+								border-bottom: 1px solid red
+						.error
+							position: absolute
+							width: 100%
+							left: 0
+							bottom: -20px
+							color: red
 				&-button
 					margin-top: 53px
 					background: #3243A0
@@ -2640,7 +2741,7 @@ ul.paggination
 			font-size: 12px
 	.main
 		&__achievement
-			p
+			li,p
 				font-size: 16px
 	.services
 		&__list
@@ -2687,7 +2788,7 @@ ul.paggination
 		&-title
 			line-height: initial
 		&__achievement
-			p
+			li,p
 				line-height: initial
 	.services
 		&__list
@@ -2815,19 +2916,19 @@ ul.paggination
 	.main
 		background-position-x: right
 		&__achievement
-			flex-direction: column
-			grid-gap: 24px
-			padding: 0
-			padding-bottom: 32px
-			&::before
-				content: none
-			& li 
-				p
-					font-size: 12px
+			ul
+				flex-direction: column
+				grid-gap: 24px
+				padding: 0
+				padding-bottom: 32px
 				&::before
-					left: 0%
-					top: 50%
-					transform: translate(0%, -50%)
+					content: none
+				& li,p
+					font-size: 12px
+					&::before
+						left: 0%
+						top: 50%
+						transform: translate(0%, -50%)
 	.btn-mobile-none
 		display: none
 	.btn-mobile-block

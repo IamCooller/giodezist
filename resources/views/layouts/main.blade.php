@@ -10,12 +10,17 @@
     <title>@yield('title','“Гидропроект”')</title>
     <meta name="keywords" content="@yield('keywords','Гидропроект')">
     <meta name="description" content="@yield('description','Гидропроект')">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" sizes="192x192" href="/{{$options->favicon}}" />
     <link rel="canonical" href="{{url()->current()}}"/>
     <!-- Scripts -->
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
 
-
+     <!-- Scripts -->
+     <script>
+        window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};
+    </script>
 
 
 
@@ -326,7 +331,10 @@
             </div>
             <div class="footer__bottom">
                 <p>{{trans('Все права защищены 2022 ©')}}</p>
-                <div class="footer__bottom_dev">
+                {!! $options->yandex_met !!}
+                {!! $options->nip !!}
+                {!! $options->google_analyt !!}
+                <a href="https://goldenminds.uz/" class="footer__bottom_dev">
                     Developed by GoldenMinds
                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<mask id="mask0_301_2659" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
@@ -343,26 +351,119 @@
 						</defs>
 						</svg>
 
-                </div>
+                </a>
             </div>
         </div>
+     
+         @if ($message = Session::get('success'))
+    
+    <div id="successForm">                      
+        <strong>{{trans('Спасибо, сообщение отправлено!')}}</strong>                          
+    </div>
+@endif
+    
+@if ($message = Session::get('error'))
+    
+    <div id="successFormError">                      
+        <strong>{{trans('Произошла ошибка!')}}</strong>                          
+    </div>
+@endif
+
     </footer>
-    <form id="callback__form" class="callback mfp-hide">
+
+    <form method="POST" action="/send" id="callback__form" class="callback mfp-hide"  name="myFormPop" onsubmit="return validatePop()">
+    {{ csrf_field() }}
         <div class="callback-title">
         {{trans('Заказать звонок')}}
         </div>
         <div class="callback-form">
             <div class="callback-form__input">
                 <input type="text" name="name" placeholder="{{trans('Ваше имя')}}">
+                <span class="error"></span>    
             </div>
             <div class="callback-form__input">
                 <input type="text" name="phone" placeholder="{{trans('Ваш телефон')}}">
+                <span class="error"></span>    
             </div>
 
-            <input type="submit" class="callback-form__submit" value="{{trans('Отправить')}}">
-
+            <button type="submit" class="callback-form__submit button">{{trans('Отправить')}}</button>
             <button title="Close (Esc)" type="button" class="mfp-close">×</button>
     </form>
+
+    <script type="text/javascript">
+         $(document).ready(function() {
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+
+          fixedContentPos: false
+        });
+      });
+
+      @if ($message = Session::get('success'))
+      $.magnificPopup.open({
+            items: {
+                src: $('#successForm'),
+                type: 'inline'
+            }
+            });
+        @endif
+        @if ($message = Session::get('error'))
+      $.magnificPopup.open({
+            items: {
+                src: $('#successFormError'),
+                type: 'inline'
+            }
+            });
+        @endif
+    </script>
+    <script>
+  function validatePop() {
+  
+    let name = document.forms["myFormPop"]["name"];
+    if (name.value == "") {
+        name.classList.add("errorInput");
+        name.parentElement.querySelector('.error').innerText ="{{trans('Укажите Имя')}}";
+      return false;
+    }else{
+        name.classList.remove('errorInput');
+        name.parentElement.querySelector('.error').innerText='';
+    }
+   
+    let phone = document.forms["myFormPop"]["phone"];
+    let regex = /^((8|\+7|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    if ((phone.value == "") || (!regex.test(phone.value))) {
+
+        phone.classList.add("errorInput");
+        phone.parentElement.querySelector('.error').innerText ="{{trans('Укажите ваш телефон')}}";
+      return false;
+    }else{
+        phone.classList.remove('errorInput');
+        phone.parentElement.querySelector('.error').innerText='';
+    }
+    }
+
+    function validatePodpis() {
+
+let c = document.forms["myFormPodpis"]["email"];
+if (c.value == "") {
+    c.classList.add("errorInput");
+    c.parentElement.querySelector('.error').innerText ="{{trans('Укажите ваш Email')}}";
+  return false;
+}else{
+    c.classList.remove('myFormPodpis');
+    c.parentElement.querySelector('.error').innerText='';
+}
+}
+</script>
+
+
+  
+
+  
 
     <script src="{{ asset('libs/aos/aos.js')}}"></script>
 </body>

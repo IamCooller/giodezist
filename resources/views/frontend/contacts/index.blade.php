@@ -1,70 +1,117 @@
 @extends('layouts.main')
-@section('title')   @endsection
-@section('description')   @endsection
-@section('keywords')  @endsection
+@section('title') {{$contacts->title}}  @endsection
+@section('description') {{$contacts->description}}  @endsection
+@section('keywords') {{$contacts->keywords}}  @endsection
 @section('content')
 <section class="MainContacts" data-aos="fade-down">
             <div class="container">
                 <div class="MainContacts__wrapper">
                     <div class="MainContacts__wrapper_left">
                         <ul class="breadcrumb">
-                            <li><a href="http://127.0.0.1:8000">Главная</a></li>
-                            <li><span>Контакты</span></li>
+                            <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
+                            <li><span>{{trans('Контакты')}}</span></li>
                             <div class="MainContacts__informations">
-                                <h1 class="title">Контакты</h1>
+                                <h1 class="title">{{$contacts->Contacttitle}}</h1>
                                 <div class="MainContacts__informations_tels">
-                                    <a href="tel:+99893 200 25 63">+99893 200 25 63</a>
-                                    <a href="tel:+99890 957 32 33">+99890 957 32 33</a>
+                                    {!! $contacts->Contacttel !!}
                                 </div>
                                 <div class="MainContacts__informations_graphs">
-                                    <p>График работы: Пн / Вт / Ср / Чт / Пт</p>
-                                    <p> Рабочее время: с 9.00 до 18.00</p>
-                                    <p> Перерыв: с 13.00 до 14.00</p>
-                                    <p> Выходные дни: Сб / Вс</p>
+                                    {!! $contacts->Contactgraphs !!}
                                 </div>
-                                <address>г.Ташкент, Яккасарайский район, Кичик халка йули, д.5</address>
+                                @if($contacts->Contactaddress)
+                                <address>{{$contacts->Contactaddress}}</address>
+                                @endif
                             </div>
 
                         </ul>
                     </div>
-
+            
+                    @if($contacts->Contactmap)
                     <div class="MainContacts__wrapper_rihgt">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1498.8888763218183!2d69.24947727201366!3d41.2919411909921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8afa9fa300a9%3A0x349455741394ce58!2z0JDQniAi0JPQuNC00YDQvtC_0YDQvtC10LrRgiI!5e0!3m2!1sru!2sge!4v1636987209094!5m2!1sru!2sge"
-                            width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                      
+                            {!! $contacts->Contactmap !!}
+                        
                     </div>
-
+                    @endif
                 </div>
             </div>
 
 
         </section>
-        <section class="MainContactsFormSection bg-img-fix" style="background-image: url('img/backgorundFix/background20.svg');">
+        <section class="MainContactsFormSection bg-img-fix" style="background-image: url('/img/backgorundFix/background20.svg');">
             <div class="container" data-aos="fade-down">
                 <div class="MainContactsFormSection__wrapper">
-                    <form method="POST" class="MainContactsForm">
-                        <div class="MainContactsForm-title">Напишите нам</div>
-                        <div class="MainContactsForm-subtitle">Если у вас остались вопросы, на которые мы сможем вам ответить в процессе разговора - напишите нам. Мы открыты для диалога!</div>
+         
+                    <form method="POST" class="MainContactsForm" id="contactform" name="myForm" onsubmit="return validate()">
+                    
+                    {{ csrf_field() }}
+                        <div class="MainContactsForm-title">{{trans('Напишите нам')}}</div>
+                        <div class="MainContactsForm-subtitle">{{trans('Если у вас остались вопросы, на которые мы сможем вам ответить в процессе разговора - напишите нам. Мы открыты для диалога!')}}</div>
                         <div class="MainContactsForm__form_wrapper">
 
                             <div class="MainContactsForm__form_wrapper_input">
-                                <input type="tel" name="tel" id="tel" placeholder="Ваш телефон" class="focus">
+                                <input type="tel" name="tel" id="tel" placeholder="{{trans('Ваш телефон')}}" class="focus">
                                 <span class="error"></span>
                             </div>
                             <div class="MainContactsForm__form_wrapper_input">
-                                <input type="email" name="email" id="email" placeholder="Ваш e-mail" class="focus">
+                                <input type="email" name="email" id="email" placeholder="{{trans('Ваш e-mail')}}" class="focus">
                                 <span class="error"></span>
                             </div>
                             <div class="MainContactsForm__form_wrapper_textarea">
-                                <textarea placeholder="Сообщение" type="text" name="subject" id="subject" class="focus"></textarea>
+                                <textarea placeholder="{{trans('Сообщение')}}" type="text" name="message" id="message" class="focus"></textarea>
                                 <span class="error"></span>
                             </div>
 
                         </div>
 
-                        <button class="MainContactsForm__form-button button" type="submit">Отправить</button>
+                        <button class="MainContactsForm__form-button button" type="submit">{{trans('Отправить')}}</button>
 
                     </form>
                 </div>
             </div>
         </section>
+
+
+        <script>
+  function validate() {
+
+    let c = document.forms["myForm"]["email"];
+    if (c.value == "") {
+        c.classList.add("errorInput");
+        c.parentElement.querySelector('.error').innerText ="{{trans('Укажите ваш Email')}}";
+      return false;
+    }else{
+        c.classList.remove('errorInput');
+        c.parentElement.querySelector('.error').innerText='';
+    }
+    let d = document.forms["myForm"]["tel"];
+    let regex = /^((8|\+7|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+
+
+
+    if ((d.value == "") || (!regex.test(d.value))) {
+
+      d.classList.add("errorInput");
+        d.parentElement.querySelector('.error').innerText ="{{trans('Укажите ваш телефон')}}";
+      return false;
+    }else{
+        d.classList.remove('errorInput');
+        d.parentElement.querySelector('.error').innerText='';
+    }
+
+    let x = document.forms["myForm"]["message"];
+    if (x.value == "") {
+
+      x.classList.add("errorInput");
+        x.parentElement.querySelector('.error').innerText ="{{trans('Введите сообщение')}}";
+      return false;
+    }else{
+        x.classList.remove('errorInput');
+        x.parentElement.querySelector('.error').innerText='';
+    }
+
+
+    
+    }
+</script>
 @endsection

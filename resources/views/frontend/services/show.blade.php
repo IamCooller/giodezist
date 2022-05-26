@@ -10,7 +10,7 @@
             <div class="SingleServices__main_left">
                 <ul class="breadcrumb breadcrumb-single">
                     <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
-                    <li><a href="{{route('service')}}">Услуги</a></li>
+                    <li><a href="{{route('services')}}">{{trans('Услуги')}}</a></li>
                     <li><span>{{$service->TitleService}}</span></li>
                 </ul>
 
@@ -27,7 +27,7 @@
     </div>
 </div>
 @if($service->BlockOneService)
-<div class="SingleServices__one bg-img-fix" style="background-image: url('img/backgorundFix/background5.svg');">
+<div class="SingleServices__one bg-img-fix" style="background-image: url('/img/backgorundFix/background5.svg');">
     <div class="container" data-aos="fade-down">
         <div class="SingleServices__one_wrapper">
             {!! $service->BlockOneService !!}
@@ -52,7 +52,7 @@
 </div>
 @endif
 @if($service->BlockThreeService)
-<div class="SingleServices__three bg-img-fix" style="background-image: url('img/backgorundFix/background6.svg');">
+<div class="SingleServices__three bg-img-fix" style="background-image: url('/img/backgorundFix/background6.svg');">
     <div class="container" data-aos="fade-down">
         <div class="SingleServices__three_wrapper">
             {!! $service->BlockThreeService !!}

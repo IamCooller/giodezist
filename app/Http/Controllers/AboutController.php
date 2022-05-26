@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\About;
+use App;
 class AboutController extends Controller
 {
      /**
@@ -13,6 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('frontend/about/index');
+        $About = About::latest()->first();
+        return view('frontend/about/index', compact('About'));
     }
 }

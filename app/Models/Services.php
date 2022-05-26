@@ -95,7 +95,10 @@ class Services extends Model
 
     public function service()
     {
-        return $this->hasMany(ServicesSingle::class, 'service_id', 'id');
+        $locale = App::getLocale();
+        $number = 'ServiceNumber_' . $locale;
+       
+        return $this->hasMany(ServicesSingle::class, 'service_id', 'id')->orderBy($number, 'desc');
         
     }
 

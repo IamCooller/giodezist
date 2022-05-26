@@ -32,11 +32,12 @@ return [
         'pages' => [
             (new Page(\App\User::class))
                 ->setIcon('fa fa-user')
-                ->setPriority(0),
+                ->setPriority(0)
+                ->setTitle('Пользователи'),
             (new Page(\App\Role::class))
                 ->setIcon('fa fa-group')
                 ->setPriority(100)
-              
+                ->setTitle('Права'),
         ]
             ],
     [

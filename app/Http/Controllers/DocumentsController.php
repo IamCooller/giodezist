@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\TabDocuments;
+use App\Models\Documents;
+use App;
 class DocumentsController extends Controller
 {
        /**
@@ -13,6 +15,17 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        return view('frontend/documents/index');
+        $locale = App::getLocale();
+        $numberC = 'TablicenseNumber_' . $locale;
+        $titleC = 'TablicenseTitle_' . $locale;
+    
+     
+        $tabDocuments = TabDocuments::orderBy($numberC)->where( $titleC ,'!=',NULL)->get();
+      
+       
+
+       
+
+        return view('frontend/documents/index', compact('tabDocuments'));
     }
 }

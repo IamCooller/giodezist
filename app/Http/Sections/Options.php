@@ -116,7 +116,11 @@ class Options extends Section implements Initializable
         ])
        ->addBody([
         AdminFormElement::text('email_form', 'E-mail для форм'),
-      
+        AdminFormElement::textarea('google_analyt', 'Google Analytic'),
+        AdminFormElement::textarea('yandex_met', 'Национальной информационно-поисковая система www.uz'),
+        AdminFormElement::textarea('nip', 'Яндекс.Метрика'),
+        AdminFormElement::file('favicon', 'favicon'),
+
        ]);
 
       

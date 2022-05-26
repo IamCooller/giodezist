@@ -249,7 +249,7 @@ return [
 
     'useWysiwygCard'    => true,
     'useRelationCard'    => false,
-    'useHasManyLocalCard'    => false,
+    'useHasManyLocalCard'    => true,
 
     /*
     |--------------------------------------------------------------------------

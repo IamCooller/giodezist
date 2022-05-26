@@ -31,7 +31,7 @@
     </div>
 </div>
 @if($object->ContentObject)
-<div class="SingleObjects__one bg-img-fix" style="background-image: url('img/backgorundFix/background8.svg');">
+<div class="SingleObjects__one bg-img-fix" style="background-image: url('/img/backgorundFix/background8.svg');">
     <div class="container" data-aos="fade-down">
         <div class="SingleObjects__one_wrapper">
             {!! $object->ContentObject !!}
@@ -77,7 +77,7 @@
 </div>
 @endif
 
-<div class="SingleObjects__more bg-img-fix" style="background-image: url('img/backgorundFix/background9.svg');">
+<div class="SingleObjects__more bg-img-fix" style="background-image: url('/img/backgorundFix/background9.svg');">
     <div class="container" data-aos="fade-down">
         <div class="SingleObjects__more_wrapper">
             <div class="SingleObjects__more_top">

@@ -16,7 +16,7 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
-
+use SleepingOwl\Admin\Form\FormElements;
 /**
  * Class Services
  *
@@ -152,8 +152,10 @@ class Services extends Section implements Initializable
 
 
         $form = AdminForm::card()->addBody([
-            $tabs
-           
+            $tabs,
+            new  FormElements([
+                ('<div class="alert alert-danger mb-0 m-3"><i class="fa fa-fw fa-info-circle"></i>Перед сохранением проверьте все поля! Название обязателен!</div>')
+            ])
         ]);
 
      

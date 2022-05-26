@@ -42,6 +42,10 @@ class Options extends Model
         'logo_ru',
         'logo_oz',
         
+        'google_analyt',
+        'yandex_met',
+        'nip',
+        'favicon',
         'publish_at',
 
     ];

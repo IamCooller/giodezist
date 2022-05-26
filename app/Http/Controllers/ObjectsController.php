@@ -27,7 +27,9 @@ class ObjectsController extends Controller
 
     public function show($id)
     {
-        $objects = Objects::all();
+        $locale = App::getLocale();
+        $title = 'TitleObject_' . $locale;
+        $objects = Objects::paginate(3)->where( $title ,'!=',NULL);
         $object = Objects::findOrFail($id);
         
         return view('frontend/objects/show', compact('object','objects'));

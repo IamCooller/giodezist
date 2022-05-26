@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function() {
 
   Route::get('sitemap.xml','\App\Http\Controllers\SitemapController@index');
-  Route::get('/', '\App\Http\Controllers\Frontend\HomeController@index')->name('home');
+
 
   Route::get('/sitemap', '\App\Http\Controllers\SitemapController@sitemap')->name('sitemap');
 
@@ -52,8 +52,11 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
   })->name('newlocale');
 
       Route::get('/', '\App\Http\Controllers\HomeController@index')->name('home');
+      Route::post('/send', '\App\Http\Controllers\MainController@send')->name('send');
       Route::get('/about', '\App\Http\Controllers\AboutController@index')->name('about');
       Route::get('/contacts', '\App\Http\Controllers\ContactsController@index')->name('contacts');
+      Route::post('/contacts', '\App\Http\Controllers\ContactsController@send');
+
       Route::get('/services', '\App\Http\Controllers\ServicesController@index')->name('services');
       Route::get('/services/{id}', '\App\Http\Controllers\ServicesController@show')->name('services.show');
       Route::get('/departments', '\App\Http\Controllers\DepartmentsController@index')->name('departments');
@@ -71,6 +74,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
       Route::get('/structure', '\App\Http\Controllers\StructureController@index')->name('structure');
       Route::get('/tasks', '\App\Http\Controllers\TasksController@index')->name('tasks');
       Route::get('/vacancy', '\App\Http\Controllers\VacancyController@index')->name('vacancy');
+      Route::post('/vacancy', '\App\Http\Controllers\VacancyController@send');
+      
     });
 
     Route::get('/admin', function () {

@@ -3,137 +3,43 @@
 @section('description')   @endsection
 @section('keywords')  @endsection
 @section('content')
-<section class="MainVideos Gallery borderTop bg-img-fix" style="background-image: url('img/backgorundFix/background14.svg');">
+<section class="MainVideos Gallery borderTop bg-img-fix" style="background-image: url('/img/backgorundFix/background14.svg');">
             <div class="container" data-aos="fade-down">
 
                 <ul class="breadcrumb">
-                    <li><a href="http://127.0.0.1:8000">Главная</a></li>
-                    <li><span>Видеогалерея</span></li>
+                    <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
+                    <li><span>{{trans('Видеогалерея')}}</span></li>
                 </ul>
                 <div class="Gallery__wrapper">
-                    <h2 class="title">Видеогалерея</h2>
+                    <h2 class="title">{{trans('Видеогалерея')}}</h2>
 
                     <div class="Gallery__list">
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/MainPage/projects1.png')" alt="" class="Gallery__list_item-img ibg"></div>
+                        @foreach($videos as $video)
+                        <a href="{{ route('videos.show',['id'=>$video->id]) }}" class="Gallery__list_item">
+                            @if($video->VideosImg)
+                            <img src="/{{$video->VideosImg}}" alt="" class="Gallery__list_item-img ibg"/>
+                            @endif
                             <div class="Gallery__list_item_bottom">
                                 <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
+                                    {{$video->VideosTitle}}
+                                   
                                 </p>
                                 <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
+                                    <i data-svg="/img/videos.svg"></i> 
+                                    @if($video->VideosContent)
+                                     {{count(explode(",", $video->VideosContent))}}
+                                    @else
+                                        0
+                                    @endif
                                 </div>
 
                             </div>
                         </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/1.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/2.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/3.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/4.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/1.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/3.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/2.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="single-videos.html" class="Gallery__list_item">
-                            <div style="background-image: url('img/photos/4.png')" alt="" class="Gallery__list_item-img ibg"></div>
-                            <div class="Gallery__list_item_bottom">
-                                <p class="Gallery__list_item-title">
-                                    Геодезист делает замеры определенной местности
-                                </p>
-                                <div class="Gallery__list_item-count">
-                                    <i data-svg="img/videos.svg"></i> 43
-                                </div>
-
-                            </div>
-                        </a>
+                        @endforeach
 
                     </div>
-                    <ul class="paggination">
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="32" cy="32" r="32" fill="#F4F5F9"/>
-                            <path d="M35.129 31.25L31.106 27.227L32.1665 26.1665L38 32L32.1665 37.8335L31.106 36.773L35.129 32.75H26V31.25H35.129Z" fill="#101C5A"/>
-                            </svg>
-                            </a></li>
-                    </ul>
+                    {{ $videos->links() }}
+
                 </div>
 
 

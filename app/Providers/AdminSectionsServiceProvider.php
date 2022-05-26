@@ -26,6 +26,19 @@ class AdminSectionsServiceProvider extends ServiceProvider
         'App\Models\Services' => 'App\Http\Sections\Services',
         'App\Models\ServicesSingle' => 'App\Http\Sections\ServicesSingle',
         'App\Models\Objects'    => 'App\Http\Sections\Objects',
+        'App\Models\News'    => 'App\Http\Sections\News',
+        'App\Models\Photos'    => 'App\Http\Sections\Photos',
+        'App\Models\Videos' => 'App\Http\Sections\Videos',
+        'App\Models\About' => 'App\Http\Sections\About',
+        'App\Models\Tasks' => 'App\Http\Sections\Tasks',
+        'App\Models\Structure' => 'App\Http\Sections\Structure',
+        'App\Models\Departaments' => 'App\Http\Sections\Departaments',
+        'App\Models\License'    => 'App\Http\Sections\License',
+        'App\Models\TabDocuments'  => 'App\Http\Sections\TabDocuments',
+        'App\Models\Documents' => 'App\Http\Sections\Documents',
+        'App\Models\Vacancy' => 'App\Http\Sections\Vacancy',
+        'App\Models\Contacts' => 'App\Http\Sections\Contacts',
+        'App\Models\FormsCallback'  => 'App\Http\Sections\FromsCallback',
     ];
 
     

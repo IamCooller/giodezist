@@ -16,7 +16,7 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
-
+use App\Role;
 /**
  * Class Users
  *
@@ -31,11 +31,7 @@ class Users extends Section implements Initializable
      */
     protected $checkAccess = false;
 
-    /**
-     * @var string
-     */
-    protected $title;
-
+    protected $title = 'Пользователи';
     /**
      * @var string
      */
@@ -54,106 +50,57 @@ class Users extends Section implements Initializable
      *
      * @return DisplayInterface
      */
-    public function onDisplay($payload = [])
+
+
+    /**
+     * @return DisplayInterface
+     */
+    public function onDisplay()
     {
-        $columns = [
-            AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name', 'created_at')
-                ->setSearchCallback(function($column, $query, $search){
-                    return $query
-                        ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%')
-                    ;
-                })
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
-                ->setWidth('160px')
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('updated_at', $direction);
-                })
-                ->setSearchable(false)
-            ,
-        ];
+     
 
-        $display = AdminDisplay::datatables()
-            ->setName('firstdatatables')
-            ->setOrder([[0, 'asc']])
-            ->setDisplaySearch(true)
-            ->paginate(25)
-            ->setColumns($columns)
-            ->setHtmlAttribute('class', 'table-primary table-hover th-center')
-        ;
 
-        $display->setColumnFilters([
-            AdminColumnFilter::select()
-                ->setModelForOptions(\App\Models\User::class, 'name')
-                ->setLoadOptionsQueryPreparer(function($element, $query) {
-                    return $query;
-                })
-                ->setDisplay('name')
-                ->setColumnName('name')
-                ->setPlaceholder('All names')
-            ,
-        ]);
-        $display->getColumnFilters()->setPlacement('card.heading');
-
-        return $display;
+            $display = AdminDisplay::datatablesAsync()
+            ->with('roles')
+            ->setHtmlAttribute('class', 'table-primary')
+            ->setColumns([
+                AdminColumn::link('name', 'Username'),
+                AdminColumn::email('email', 'Email')->setWidth('150px'),
+            ]);
+            $display->paginate(15);
+    
+            return $display;
     }
 
     /**
-     * @param int|null $id
-     * @param array $payload
+     * @param int $id
      *
      * @return FormInterface
      */
-    public function onEdit($id = null, $payload = [])
+    public function onEdit($id)
     {
-        $form = AdminForm::card()->addBody([
-            AdminFormElement::columns()->addColumn([
-                AdminFormElement::text('name', 'Name')
-                    ->required()
-                ,
-                AdminFormElement::html('<hr>'),
-                AdminFormElement::datetime('created_at')
-                    ->setVisible(true)
-                    ->setReadonly(false)
-                ,
-                AdminFormElement::html('last AdminFormElement without comma')
-            ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
-                AdminFormElement::text('id', 'ID')->setReadonly(true),
-                AdminFormElement::html('last AdminFormElement without comma')
-            ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
-        ]);
-
-        $form->getButtons()->setButtons([
-            'save'  => new Save(),
-            'save_and_close'  => new SaveAndClose(),
-            'save_and_create'  => new SaveAndCreate(),
-            'cancel'  => (new Cancel()),
-        ]);
-
-        return $form;
+        return AdminForm::panel()->addBody([
+            AdminFormElement::text('name', 'Username')->required(),
+            AdminFormElement::password('password', 'Password')->required()->addValidationRule('min:6'),
+            AdminFormElement::text('email', 'E-mail')->required()->addValidationRule('email'),
+            AdminFormElement::multiselect('roles', 'Roles', Role::class)->setDisplay('name'),
+        ])->setHtmlAttribute('enctype', 'multipart/form-data');
     }
 
+    
     /**
      * @return FormInterface
      */
-    public function onCreate($payload = [])
+    public function onCreate()
     {
-        return $this->onEdit(null, $payload);
+        return $this->onEdit(null);
     }
-
-    /**
-     * @return bool
-     */
-    public function isDeletable(Model $model)
+    
+    public function onDelete($id)
     {
-        return true;
+        
     }
+  
 
     /**
      * @return void

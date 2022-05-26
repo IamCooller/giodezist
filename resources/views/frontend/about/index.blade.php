@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('title')   @endsection
-@section('description')   @endsection
-@section('keywords')  @endsection
+@section('title')  {{$About->title}} @endsection
+@section('description') {{$About->description}}@endsection
+@section('keywords') {{$About->keywords}}@endsection
 @section('content')
 <section class="SingleDepartaments SingleObjects ">
 
@@ -12,61 +12,44 @@
         <div class="SingleDepartaments__main_wrapper SingleObjects__main_wrapper">
             <div class="SingleDepartaments__main_left SingleObjects__main_left">
                 <ul class="breadcrumb breadcrumb-single">
-                    <li><a href="http://127.0.0.1:8000">Главная</a></li>
+                    <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
 
-                    <li><span>О компании</span></li>
+                    <li><span>{{trans('О компании')}}</span></li>
                 </ul>
-                <h1 class="SingleDepartaments-title SingleObjects-title">О компании
+                <h1 class="SingleDepartaments-title SingleObjects-title">{{$About->aboutTitle}}
                 </h1>
-                <h2 class="SingleDepartaments-subtitle SingleObjects-subtitle">23 сотрудника</h2>
+                <h2 class="SingleDepartaments-subtitle SingleObjects-subtitle">{{$About->aboutSubTitle}}</h2>
             </div>
+            @if($About->aboutImg)
             <div class="SingleDepartaments__main_right SingleObjects__main_right">
-                <img src="img/objects/1.png" alt="">
+                <img src="/{{$About->aboutImg}}" alt="{{$About->aboutTitle}}"/>
             </div>
+            @endif
         </div>
 
     </div>
 </div>
-<div class="SingleDepartaments__one SingleObjects__one bg-img-fix" style="background-image: url('img/backgorundFix/background17.svg');">
+@if($About->aboutContent)
+<div class="SingleDepartaments__one SingleObjects__one bg-img-fix" style="background-image: url('/img/backgorundFix/background17.svg');">
     <div class="container" data-aos="fade-down">
         <div class="SingleDepartaments__one_wrapper SingleObjects__one_wrapper">
-
-            <p>В работах философа Конфуция, которые были написаны в 600 г. до н. э., были описаны китайские скважины для добычи воды и соляных рассолов. Такие скважины сооружались с помощью метода ударного бурения. Время от времени китайцы в
-                ходе бурения натыкались на нефть или газ, как, например, в Сычуане из скважин глубиной около 240 м добывали газ, который использовался для выпаривания соли[источник не указан 139 дней].
-            </p>
-            <ul>
-                <li>В работах философа Конфуция, которые были написаны в 600 г. до н. э.</li>
-                <li>До середины XIX века нефть добывалась</li>
-                <li>В работах философа Конфуция, которые были написаны в 600 г. до н. э.</li>
-            </ul>
+            {!! $About->aboutContent !!}
         </div>
     </div>
 </div>
+@endif
 <div class="AboutPhotos SingleDepartaments__photos SingleObjects__photos">
     <div class="container" data-aos="fade-down">
         <div class="SingleDepartaments__photos_wrapper SingleObjects__photos_wrapper">
-            <h2 class="SingleDepartaments__photos-title SingleObjects__photos-title title">фотогалерея</h2>
+            <h2 class="SingleDepartaments__photos-title SingleObjects__photos-title title">{{trans('фотогалерея')}}</h2>
             <div class="SingleDepartaments__photos_wrapper_slider SingleObjects__photos_wrapper_slider">
                 <div class="SingleDepartaments__photos_list SingleObjects__photos_list">
                     <div class="swiper-wrapper">
+                        @foreach(explode(",", $About->aboutPhotos) as $photo)
                         <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 2.png" alt="">
+                            <img src="/{{$photo}}" alt="{{$photo}}"/>
                         </div>
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 3.png" alt="">
-                        </div>
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 4.png" alt="">
-                        </div>
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 2.png" alt="">
-                        </div>
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 3.png" alt="">
-                        </div>
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
-                            <img src="img/objects/Каневская ГЭС 4.png" alt="">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="slaider__buttons buttons-slaider">
                         <div class="buttons-slaider__reght reght-buttons">
