@@ -899,7 +899,6 @@ ul.breadcrumb li a:hover {
 
 .main__achievement li, .main__achievement p {
   position: relative;
-  padding-left: 50px;
   font-style: normal;
   font-weight: 500;
   font-size: 26px;
@@ -907,13 +906,17 @@ ul.breadcrumb li a:hover {
   -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
           font-feature-settings: 'pnum' on, 'lnum' on;
   color: #fff;
-  max-width: 320px;
 }
 
 @media (max-width: 1430px) {
   .main__achievement li, .main__achievement p {
     font-size: calc( 16px + 10 * ((100vw - 320px) / 1110));
   }
+}
+
+.main__achievement li {
+  padding-left: 50px;
+  max-width: 320px;
 }
 
 .main__achievement li::before {
