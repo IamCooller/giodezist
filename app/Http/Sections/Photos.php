@@ -25,7 +25,7 @@ use SleepingOwl\Admin\Form\FormElements;
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Photos extends Section implements Initializable
+class Photos extends Section
 {
     /**
      * @var bool
@@ -42,13 +42,7 @@ class Photos extends Section implements Initializable
      */
     protected $alias;
 
-    /**
-     * Initialize class.
-     */
-    public function initialize()
-    {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-camera');
-    }
+
 
     /**
      * @param array $payload

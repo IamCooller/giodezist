@@ -24,7 +24,7 @@ use SleepingOwl\Admin\Section;
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Structure extends Section implements Initializable
+class Structure extends Section
 {
     /**
     * @var bool
@@ -41,13 +41,6 @@ class Structure extends Section implements Initializable
     */
    protected $alias;
 
-   /**
-    * Initialize class.
-    */
-   public function initialize()
-   {
-       $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-id-badge');
-   }
 
    /**
     * @param array $payload

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Policies;
+namespace Admin\Policies;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TranslationSectionModelPolicy
+class UsersSectionModelPolicy
 {
 
     use HandlesAuthorization;

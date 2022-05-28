@@ -25,7 +25,7 @@ use SleepingOwl\Admin\Form\FormElements;
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Videos extends Section implements Initializable
+class Videos extends Section 
 {
     /**
      * @var bool
@@ -42,13 +42,7 @@ class Videos extends Section implements Initializable
      */
     protected $alias;
 
-    /**
-     * Initialize class.
-     */
-    public function initialize()
-    {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-video');
-    }
+    
 
     /**
      * @param array $payload

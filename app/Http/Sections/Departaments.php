@@ -24,7 +24,7 @@ use SleepingOwl\Admin\Form\FormElements;
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class Departaments extends Section implements Initializable
+class Departaments extends Section
 {
     /**
      * @var bool
@@ -41,13 +41,7 @@ class Departaments extends Section implements Initializable
      */
     protected $alias;
 
-    /**
-     * Initialize class.
-     */
-    public function initialize()
-    {
-        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-people-arrows');
-    }
+
 
     /**
      * @param array $payload

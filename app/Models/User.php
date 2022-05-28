@@ -43,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function isSuperAdmin()
+    {
+        /**
+         * Here goes your logic to determine which users are "super_admin"
+         *
+         * For example, in case you have a'is_super_admin' boolean column 
+         * in your database, you could do:
+         */
+    
+        return $this->user()->where('id', '1')->exists();
+    }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

@@ -1,9 +1,8 @@
 <?php
 
-namespace Admin\Policies;
+namespace App\Policies;
 
-use Admin\Http\Sections\Users;
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UsersSectionModelPolicy
@@ -12,57 +11,70 @@ class UsersSectionModelPolicy
     use HandlesAuthorization;
 
     /**
-     * @param User $user
+     * @param User   $user
      * @param string $ability
-     * @param Users $section
-     * @param User $item
      *
      * @return bool
      */
-    public function before(User $user, $ability, Users $section, User $item = null)
+    public function before(User $user, $ability, User $item)
     {
-        if ($user->hasRole('superadmin')) {
-            //if ($ability != 'display' && $ability != 'create' && !is_null($item) && $item->id <= 2) {
-            //    return false;
-          //  }
-
+        if ($user->isSuperAdmin()) {
             return true;
         }
     }
 
     /**
      * @param User $user
-     * @param Users $section
      * @param User $item
      *
      * @return bool
      */
-    public function display(User $user, Users $section, User $item)
+    public function display(User $user, User $item)
     {
         return true;
     }
 
     /**
      * @param User $user
-     * @param Users $section
      * @param User $item
      *
      * @return bool
      */
-    public function edit(User $user, Users $section, User $item)
+    public function create(User $user, User $item)
     {
-        return $item->id > 2;
+        return true;
     }
 
     /**
      * @param User $user
-     * @param Users $section
      * @param User $item
      *
      * @return bool
      */
-    public function delete(User $user, Users $section, User $item)
+    public function edit(User $user, User $item)
     {
-        return $item->id > 2;
+        return true;
+    }
+
+    /**
+     * @param User $user
+     * @param User $item
+     *
+     * @return bool
+     */
+    public function delete(User $user, User $item)
+    {
+        return true;
+    }
+
+    /**
+     * @param User $user
+     * @param User $item
+     *
+     * @return bool
+     */
+    public function restore(User $user, User $item)
+    {
+        return true;
     }
 }

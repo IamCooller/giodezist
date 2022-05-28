@@ -24,7 +24,7 @@ use SleepingOwl\Admin\Section;
  *
  * @see https://sleepingowladmin.ru/#/ru/model_configuration_section
  */
-class About extends Section implements Initializable
+class About extends Section 
 {
     /**
      * @var bool
@@ -41,13 +41,7 @@ class About extends Section implements Initializable
      */
     protected $alias;
 
-    /**
-     * Initialize class.
-     */
-    public function initialize()
-    {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-building');
-    }
+
 
     /**
      * @param array $payload
