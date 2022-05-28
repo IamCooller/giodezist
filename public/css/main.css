@@ -683,7 +683,7 @@ ul.breadcrumb li a:hover {
     font-size: calc( 16px + 10 * ((100vw - 320px) / 1110));
   }
 }
-.main__achievement li::before, .main__achievement p::before {
+.main__achievement li::before {
   content: "";
   background: no-repeat url("data:image/svg+xml,%3Csvg width='29' height='36' viewBox='0 0 29 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='18' r='3' fill='white'/%3E%3Ccircle cx='11' cy='18' r='10' stroke='%233243A0' stroke-width='2'/%3E%3Cpath d='M11 35C20.3888 35 28 27.3888 28 18C28 8.61116 20.3888 1 11 1' stroke='%233243A0' stroke-width='2'/%3E%3C/svg%3E%0A");
   position: absolute;
@@ -4138,7 +4138,7 @@ ul.paggination li:last-child {
   .main__achievement ul li, .main__achievement ul p {
     font-size: 12px;
   }
-  .main__achievement ul li::before, .main__achievement ul p::before {
+  .main__achievement ulli::before {
     left: 0%;
     top: 50%;
     transform: translate(0%, -50%);

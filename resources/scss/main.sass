@@ -488,6 +488,7 @@ ul.breadcrumb li a:hover
 			font-feature-settings: 'pnum' on, 'lnum' on
 			color: $white
 			max-width: 320px
+		& li
 			&::before
 				content: ''
 				background: no-repeat url("data:image/svg+xml,%3Csvg width='29' height='36' viewBox='0 0 29 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='18' r='3' fill='white'/%3E%3Ccircle cx='11' cy='18' r='10' stroke='%233243A0' stroke-width='2'/%3E%3Cpath d='M11 35C20.3888 35 28 27.3888 28 18C28 8.61116 20.3888 1 11 1' stroke='%233243A0' stroke-width='2'/%3E%3C/svg%3E%0A")
@@ -2925,6 +2926,7 @@ ul.paggination
 					content: none
 				& li,p
 					font-size: 12px
+				&li
 					&::before
 						left: 0%
 						top: 50%
