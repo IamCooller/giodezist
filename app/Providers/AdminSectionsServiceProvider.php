@@ -81,7 +81,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     public function registerNavigation( NavigationInterface $navigation ) {
 
-        require base_path( 'App/Admin/navigation.php' );
+        require base_path( 'app/Admin/navigation.php' );
     }
 
     /**
@@ -101,7 +101,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
             'prefix'     => config( 'sleeping_owl.url_prefix' ),
             'middleware' => config( 'sleeping_owl.middleware' )
         ], function ( $router ) {
-            require base_path( 'App/Admin/routes.php' );
+            require base_path( 'app/Admin/routes.php' );
         } );
     }
 
@@ -111,6 +111,6 @@ class AdminSectionsServiceProvider extends ServiceProvider
     public function registerMediaPackages( MetaInterface $meta ) {
         $packages = $meta->assets()->packageManager();
 
-        require base_path( 'App/assets.php' );
+        require base_path( 'app/assets.php' );
     }
 }
