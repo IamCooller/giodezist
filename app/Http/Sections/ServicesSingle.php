@@ -103,7 +103,7 @@ class ServicesSingle extends Section
                   
                     AdminFormElement::image('ServiceImg_ru', 'Изображение услуги'),
                     AdminFormElement::text('TitleService_ru', 'Название услуги'),
-                    AdminFormElement::text('SubTitleService_ru', 'Краткое описание услуги'),
+                    AdminFormElement::textarea('SubTitleService_ru', 'Краткое описание услуги'),
                    
 
                     AdminFormElement::html('<hr>'),
@@ -133,7 +133,7 @@ class ServicesSingle extends Section
                   
                     AdminFormElement::image('ServiceImg_oz', 'Изображение услуги'),
                     AdminFormElement::text('TitleService_oz', 'Название услуги'),
-                    AdminFormElement::text('SubTitleService_oz', 'Краткое описание услуги'),
+                    AdminFormElement::textarea('SubTitleService_oz', 'Краткое описание услуги'),
                    
 
                     AdminFormElement::html('<hr>'),
@@ -164,7 +164,7 @@ class ServicesSingle extends Section
                   
                     AdminFormElement::image('ServiceImg_en', 'Изображение услуги'),
                     AdminFormElement::text('TitleService_en', 'Название услуги'),
-                    AdminFormElement::text('SubTitleService_en', 'Краткое описание услуги')
+                    AdminFormElement::textarea('SubTitleService_en', 'Краткое описание услуги')
                    
 
 
