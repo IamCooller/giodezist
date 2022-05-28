@@ -147,6 +147,7 @@ class CreateRolesKadrAndFin extends Seeder
         $adminUser->roles()->attach($PhotosRole);
         $adminUser->roles()->attach($ServiceRole);
         $adminUser->roles()->attach($adminRole);
+        
         $testUser->roles()->attach($managerRole);
     }
 }

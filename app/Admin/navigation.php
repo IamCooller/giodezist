@@ -111,9 +111,7 @@ return [
                 ->setIcon('fa fa-user')
                 ->setPriority(0)
                 ->setTitle('Пользователи')
-                ->setAccessLogic(function (Page $page) {
-                    return auth()->user()->isSuperAdmin();
-                }),
+                ,
             (new Page(\App\Role::class))
                 ->setIcon('fa fa-group')
                 ->setPriority(100)

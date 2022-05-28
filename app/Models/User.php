@@ -52,7 +52,7 @@ class User extends Authenticatable
          * in your database, you could do:
          */
     
-        return $this->user()->where('id', '1')->exists();
+        return $this->roles()->where('role_id', '1')->exists();
     }
     public function setPasswordAttribute($password)
     {
