@@ -30,23 +30,38 @@ return [
             (new Page(\App\Models\About::class))
                 ->setIcon('fa-solid fa-building')
                 ->setPriority(0)
-                ->setTitle('О компании'),
+                ->setTitle('О компании')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isAboutAdmin();
+                }),
             (new Page(\App\Models\Tasks::class))
                 ->setIcon('fa-solid fa-list-check')
                 ->setPriority(100)
-                ->setTitle('Задачи'),
+                ->setTitle('Задачи')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isTasksAdmin();
+                }),
                 (new Page(\App\Models\Structure::class))
                 ->setIcon('fa-solid fa-id-badge')
                 ->setPriority(100)
-                ->setTitle('Структура'),
+                ->setTitle('Структура')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isStructureAdmin();
+                }),
                 (new Page(\App\Models\Departaments::class))
                 ->setIcon('fas fa-people-arrows')
                 ->setPriority(100)
-                ->setTitle('Отделы'),
+                ->setTitle('Отделы')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isDepartsAdmin();
+                }),
                 (new Page(\App\Models\License::class))
                 ->setIcon('fa-solid fa-file-circle-check')
                 ->setPriority(100)
-                ->setTitle('Лицензии'),
+                ->setTitle('Лицензии')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isLicensesAdmin();
+                }),
                 [
                     'title' => 'Документация',
                     'icon' => 'fa-solid fa-people-group',
@@ -55,17 +70,26 @@ return [
                         (new Page(\App\Models\Documents::class))
                         ->setIcon('fa-solid fa-file-contract')
                         ->setPriority(100)
-                        ->setTitle('Документы'),
+                        ->setTitle('Документы')
+                        ->setAccessLogic(function (Page $page) {
+                            return auth()->user()->isDocsAdmin();
+                        }),
                         (new Page(\App\Models\TabDocuments::class))
                         ->setIcon('fa-solid fa-plus')
                         ->setPriority(100)
-                        ->setTitle('Табы документов'),
+                        ->setTitle('Табы документов')
+                        ->setAccessLogic(function (Page $page) {
+                            return auth()->user()->isDocsAdmin();
+                        }),
                     ],
                 ],
                 (new Page(\App\Models\Vacancy::class))
                 ->setIcon('fa-solid fa-people-carry-box')
                 ->setPriority(100)
-                ->setTitle('Вакансии'),
+                ->setTitle('Вакансии')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isVacancyAdmin();
+                }),
         ]
             ],
     [
@@ -76,15 +100,24 @@ return [
             (new Page(\App\Models\News::class))
                 ->setIcon('fa-solid fa-newspaper')
                 ->setPriority(0)
-                ->setTitle('Новости'),
+                ->setTitle('Новости')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isNewsAdmin();
+                }),
             (new Page(\App\Models\Photos::class))
                 ->setIcon('fa-solid fa-camera')
                 ->setPriority(100)
-                ->setTitle('Фотогалерея'),
+                ->setTitle('Фотогалерея')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isPhotosAdmin();
+                }),
                 (new Page(\App\Models\Videos::class))
                 ->setIcon('fa-solid fa-video')
                 ->setPriority(100)
-                ->setTitle('Видеогалерея'),
+                ->setTitle('Видеогалерея')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isVideoAdmin();
+                }),
         ]
             ],
     [
@@ -95,11 +128,17 @@ return [
             (new Page(\App\Models\Services::class))
                 ->setIcon('fa-solid fa-bus')
                 ->setPriority(0)
-                ->setTitle('Главные услуги'),
+                ->setTitle('Главные услуги')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isServiceAdmin();
+                }),
             (new Page(\App\Models\ServicesSingle::class))
                 ->setIcon('fa-solid fa-laptop-file')
                 ->setPriority(100)
-                ->setTitle('Услуги'),
+                ->setTitle('Услуги')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isServiceAdmin();
+                }),
         ]
             ],
     [
@@ -111,11 +150,16 @@ return [
                 ->setIcon('fa fa-user')
                 ->setPriority(0)
                 ->setTitle('Пользователи')
-                ,
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isSuperAdmin();
+                }),
             (new Page(\App\Role::class))
                 ->setIcon('fa fa-group')
                 ->setPriority(100)
-                ->setTitle('Права'),
+                ->setTitle('Права')
+                ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->isSuperAdmin();
+                }),
         ]
             ],
     [

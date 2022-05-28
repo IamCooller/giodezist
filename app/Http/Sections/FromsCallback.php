@@ -17,6 +17,8 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 use App\Models\FormsCallback as FromsCallbackModel;
+use SleepingOwl\Admin\Navigation\Page;
+
 /**
  * Class FromsCallback
  *
@@ -42,7 +44,9 @@ class FromsCallback extends Section implements Initializable
     public function initialize()
     {
         $countNews = FromsCallbackModel::where('status', FromsCallbackModel::NEW_STATUS)->count();
-        $this->addToNavigation()->setIcon('fa fa-anchor')->setPriority(99);
+        $this->addToNavigation()->setIcon('fa fa-anchor')->setPriority(99)->setAccessLogic(function (Page $page) {
+            return auth()->user()->isFormsAdmin();
+        });
         if($countNews) {
             $this->addToNavigation()->setIcon('fa fa-anchor')->setPriority(99)->addBadge(new \SleepingOwl\Admin\Navigation\Badge($countNews));
         }

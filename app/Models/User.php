@@ -43,17 +43,76 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function isSuperAdmin()
+    public function isOptionsAdmin()
     {
-        /**
-         * Here goes your logic to determine which users are "super_admin"
-         *
-         * For example, in case you have a'is_super_admin' boolean column 
-         * in your database, you could do:
-         */
-    
-        return $this->roles()->where('role_id', '1')->exists();
+        return $this->hasRole('options');
     }
+    public function isObjectsAdmin()
+    {
+        return $this->hasRole('objects');
+    }
+    public function isContactsAdmin(){
+        return $this->hasRole('contacts');
+    }
+    public function isFormsAdmin()
+    {
+        return $this->hasRole('forms_callbacks');
+    }
+    public function isHomeAdmin()
+    {
+        return $this->hasRole('home_pages');
+    }
+    public function isAboutAdmin()
+    {
+        return $this->hasRole('abouts');
+    }
+    public function isTasksAdmin()
+    {
+        return $this->hasRole('tasks');
+    }
+    public function isStructureAdmin()
+    {
+        return $this->hasRole('structures');
+    }
+    public function isDepartsAdmin()
+    {
+        return $this->hasRole('departaments');
+    }
+  
+    public function isLicensesAdmin()
+    {
+        return $this->hasRole('licenses');
+    }
+    public function isDocsAdmin()
+    {
+        return $this->hasRole('documents');
+    }
+    public function isVacancyAdmin()
+    {
+        return $this->hasRole('vacancies');
+    }
+    public function isNewsAdmin()
+    {
+        return $this->hasRole('news');
+    }
+    public function isPhotosAdmin()
+    {
+        return $this->hasRole('photos');
+    }
+    public function isVideoAdmin()
+    {
+        return $this->hasRole('videos');
+    }
+    public function isSuperAdmin()
+    {    
+        return $this->hasRole('admin');
+    }
+
+    public function isServiceAdmin()
+    {
+        return $this->hasRole('services');
+    }
+    
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);

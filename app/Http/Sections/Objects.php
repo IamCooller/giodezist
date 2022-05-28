@@ -17,6 +17,8 @@ use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
 use SleepingOwl\Admin\Form\FormElements;
+use SleepingOwl\Admin\Navigation\Page;
+
 /**
  * Class Objects
  *
@@ -46,7 +48,9 @@ class Objects extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-archive');
+        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-archive')->setAccessLogic(function (Page $page) {
+            return auth()->user()->isObjectsAdmin();
+        });
     }
 
     /**

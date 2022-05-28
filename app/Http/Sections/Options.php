@@ -16,6 +16,8 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
+use SleepingOwl\Admin\Navigation\Page;
+
 
 /**
  * Class Options
@@ -47,7 +49,9 @@ class Options extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-hammer')->setTitle('Настройки');
+        $this->addToNavigation()->setPriority(100)->setIcon('fa-solid fa-hammer')->setTitle('Настройки')->setAccessLogic(function (Page $page) {
+            return auth()->user()->isOptionsAdmin();
+        });
     }
 
     /**

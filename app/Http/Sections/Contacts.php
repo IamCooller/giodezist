@@ -16,6 +16,7 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
+use SleepingOwl\Admin\Navigation\Page;
 
 /**
  * Class Contacts
@@ -46,7 +47,9 @@ class Contacts extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-address-book');
+        $this->addToNavigation()->setPriority(100)->setIcon('fas fa-address-book')->setAccessLogic(function (Page $page) {
+            return auth()->user()->isContactsAdmin();
+        });
     }
 
     /**

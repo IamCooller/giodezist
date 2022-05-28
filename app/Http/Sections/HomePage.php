@@ -16,6 +16,7 @@ use SleepingOwl\Admin\Form\Buttons\Save;
 use SleepingOwl\Admin\Form\Buttons\SaveAndClose;
 use SleepingOwl\Admin\Form\Buttons\SaveAndCreate;
 use SleepingOwl\Admin\Section;
+use SleepingOwl\Admin\Navigation\Page;
 
 /**
  * Class HomePage
@@ -33,7 +34,9 @@ class HomePage extends Section implements Initializable
 
     public function initialize()
     {
-        $this->addToNavigation()->setIcon('fa fa-server')->setPriority(0);
+        $this->addToNavigation()->setIcon('fa fa-server')->setPriority(0)->setAccessLogic(function (Page $page) {
+            return auth()->user()->isHomeAdmin();
+        });
     }
 
 
