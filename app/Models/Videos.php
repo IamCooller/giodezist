@@ -12,7 +12,7 @@ class Videos extends Model
     /**
      * @var string
      */
-    protected $table = 'Videos';
+    protected $table = 'videos';
 
     /**
      * @var array
