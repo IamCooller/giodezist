@@ -14,7 +14,7 @@
     <link rel="icon" type="image/x-icon" sizes="192x192" href="/{{$options->favicon}}" />
     <link rel="canonical" href="{{url()->current()}}"/>
     <!-- Scripts -->
-    <script src="{{ asset('js/custom.js') }}" defer></script>
+    <script src="{{ asset('js/customs.js') }}" defer></script>
 
 
      <!-- Scripts -->
