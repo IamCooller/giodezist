@@ -78,8 +78,8 @@
     <div class="container" data-aos="fade-down">
         <div class="SingleDepartaments__more_wrapper SingleObjects__more_wrapper">
             <div class="SingleDepartaments__more_top SingleObjects__more_top">
-                <h2 class="title">{{trans('Другие Объекты')}}</h2>
-                <a href="{{route('departments')}}" class="linkMore btn-mobile-none">{{trans('Все проекты')}}</a>
+                <h2 class="title">{{trans('Другие отделы')}}</h2>
+                <a href="{{route('departments')}}" class="linkMore btn-mobile-none">{{trans('Все отделы')}}</a>
             </div>
             <div class="SingleDepartaments__more_list MainDepartaments__list">
 
@@ -97,7 +97,7 @@
              
                
             </div>
-            <a href="{{route('departments')}}" class="linkMore btn-mobile-block">{{trans('Все проекты')}}</a>
+            <a href="{{route('departments')}}" class="linkMore btn-mobile-block">{{trans('Все отделы')}}</a>
         </div>
     </div>
 

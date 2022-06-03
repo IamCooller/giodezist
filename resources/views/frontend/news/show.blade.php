@@ -57,7 +57,7 @@
 
         <div class="SingleNews__more_top">
             <h2 class="SingleNews__more-title title">{{trans('Другие новости')}}</h2>
-            <a href="{{route('news')}}" class="SingleNews__more-linkMore linkMore btn-mobile-none">{{trans('Все проекты')}}</a>
+            <a href="{{route('news')}}" class="SingleNews__more-linkMore linkMore btn-mobile-none">{{trans('Все новости')}}</a>
         </div>
         <div class="SingleNews__more_list">
         @foreach($news as $el)
@@ -76,7 +76,7 @@
             </a>
             @endforeach
         </div>
-        <a href="{{route('news')}}" class="SingleNews__more-linkMore linkMore btn-mobile-block">{{trans('Все проекты')}}</a>
+        <a href="{{route('news')}}" class="SingleNews__more-linkMore linkMore btn-mobile-block">{{trans('Все новости')}}</a>
     </div>
 </div>
 </div>
