@@ -4009,12 +4009,13 @@ ul.paggination li:last-child {
   }
   .SingleServices__main_right,
 .SingleObjects__main_right {
-    min-height: 350px;
+    min-height: auto;
     order: -1;
   }
   .SingleServices__main_right img,
 .SingleObjects__main_right img {
     width: auto;
+    max-width: 100%;
     height: inherit;
     display: block;
     margin: auto;
