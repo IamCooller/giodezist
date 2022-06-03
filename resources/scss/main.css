@@ -5185,6 +5185,7 @@ ul.paggination li:last-child {
   .SingleServices__main_right img,
   .SingleObjects__main_right img {
     width: auto;
+    max-width: 100%;
     height: inherit;
     display: block;
     margin: auto;

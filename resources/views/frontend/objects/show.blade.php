@@ -81,7 +81,7 @@
     <div class="container" data-aos="fade-down">
         <div class="SingleObjects__more_wrapper">
             <div class="SingleObjects__more_top">
-                <h2 class="title">{{trans('Другие Объекты')}} </h2>
+                <h2 class="title">{{trans('Другие отделы')}} </h2>
                 <a href="{{route('objects')}}" class="linkMore btn-mobile-none">{{trans('Все проекты')}}</a>
             </div>
             <div class="SingleObjects__more_list objects__list">
