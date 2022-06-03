@@ -13,6 +13,7 @@
                 <div class="vacancy__wrapper">
                     <div class="title">{{trans('Вакансии')}}</div>
                     <div class="vacancy__list">
+                        
                         @foreach($vacancy as $el)
                         <div class="vacancy__list_item">
                             <button class="accordion">
@@ -23,7 +24,7 @@
                             <div class="panel" style="margin-top: -1px;">
                                {!! $el->content !!}
                                 
-                                <form method="POST" class="vacancy__form" id="contactform" name="myForm" enctype="multipart/form-data" onsubmit="return validate()">
+                                <form method="POST" class="vacancy__form" id="contactform" name="myForm" enctype="multipart/form-data" onsubmit="return validate(12)">
                              @csrf
                                     <div class="vacancy__form-title">{{trans('Отправить свое резюме')}}</div>
                                     <div class="vacancy__form_wrapper">
@@ -80,8 +81,8 @@
         </section>
 
         <script>
-            function validate() {
-   
+            function validate(e) {
+   console.log(e);
    let a = document.forms["myForm"]["name"];
  if (a.value == "") {
      a.classList.add("errorInput");
