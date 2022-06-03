@@ -5177,7 +5177,7 @@ ul.paggination li:last-child {
   }
   .SingleServices__main_right,
   .SingleObjects__main_right {
-    min-height: 350px;
+    min-height: auto;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
