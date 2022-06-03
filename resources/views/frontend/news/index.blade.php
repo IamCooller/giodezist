@@ -8,7 +8,7 @@
 
                 <ul class="breadcrumb">
                     <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
-                    <li><span>{{trans('Объекты')}}</span></li>
+                    <li><span>{{trans('Новости')}}</span></li>
                 </ul>
                 <div class="MainNews__wrapper">
                     <h2 class="title">{{trans('Новости')}}</h2>

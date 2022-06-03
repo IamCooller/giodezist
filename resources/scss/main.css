@@ -5140,11 +5140,12 @@ ul.paggination li:last-child {
   .about__wrapper {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    padding-top: 550px;
+    padding-top: 0;
   }
   .about__wrapper_left img {
-    height: 550px;
+    height: auto;
     width: 100%;
+    position: relative;
   }
   .projects__wrapper {
     -webkit-box-orient: vertical;
@@ -5294,13 +5295,6 @@ ul.paggination li:last-child {
 @media (max-width: 770px) {
   .bg-img-fix {
     background-image: none !important;
-  }
-  .about__wrapper {
-    padding-top: 350px;
-  }
-  .about__wrapper_left img {
-    height: 350px;
-    width: 100%;
   }
   .main {
     background-position-x: right;
@@ -5666,13 +5660,6 @@ ul.paggination li:last-child {
 @media (max-width: 440px) {
   .callback {
     padding: 20px;
-  }
-  .about__wrapper {
-    padding-top: 215px;
-  }
-  .about__wrapper_left img {
-    height: 215px;
-    width: 100%;
   }
   .MainServices__item {
     -ms-grid-columns: 1fr;

@@ -2800,11 +2800,12 @@ ul.paggination
 	.about
 		&__wrapper
 			grid-template-columns: 1fr
-			padding-top: 550px
+			padding-top: 0
 			&_left 
 				img
-					height: 550px
+					height: auto
 					width: 100%
+					position: relative
 	.projects
 		&__wrapper
 			flex-direction: column
@@ -2910,13 +2911,7 @@ ul.paggination
 @media (max-width: 770px)
 	.bg-img-fix
 		background-image: none !important
-	.about
-		&__wrapper
-			padding-top: 350px
-			&_left 
-				img
-					height: 350px
-					width: 100%
+
 	.main
 		background-position-x: right
 		&__achievement
@@ -3186,13 +3181,7 @@ ul.paggination
 @media (max-width: 440px)
 	.callback
 		padding: 20px
-	.about
-		&__wrapper
-			padding-top: 215px
-			&_left 
-				img
-					height: 215px
-					width: 100%
+
 	.MainServices
 		&__item
 			grid-template-columns: 1fr
