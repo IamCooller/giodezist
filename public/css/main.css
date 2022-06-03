@@ -3945,10 +3945,10 @@ ul.paggination li:last-child {
     font-size: 16px;
   }
   .header .labgvidg-header__dropdown {
-    left: 55px;
+    left: 20px;
   }
   .header .labgvidg-header__dropdown-inner {
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
     grid-gap: 10px;
   }
@@ -3959,6 +3959,10 @@ ul.paggination li:last-child {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+  }
+  .header .header__options-lang {
+    margin-left: auto;
+    margin-right: 20px;
   }
 
   .main-title {

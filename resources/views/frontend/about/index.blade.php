@@ -43,12 +43,12 @@
         <div class="SingleDepartaments__photos_wrapper SingleObjects__photos_wrapper">
             <h2 class="SingleDepartaments__photos-title SingleObjects__photos-title title">{{trans('фотогалерея')}}</h2>
             <div class="SingleDepartaments__photos_wrapper_slider SingleObjects__photos_wrapper_slider">
-                <div class="SingleDepartaments__photos_list SingleObjects__photos_list">
+                <div class="SingleDepartaments__photos_list SingleObjects__photos_list popup-gallery">
                     <div class="swiper-wrapper">
                         @foreach(explode(",", $About->aboutPhotos) as $photo)
-                        <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
+                        <a href="/{{$photo}}" class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
                             <img src="/{{$photo}}" alt="{{$photo}}"/>
-                        </div>
+                        </a>
                         @endforeach
                     </div>
                     <div class="slaider__buttons buttons-slaider">

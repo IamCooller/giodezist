@@ -157,6 +157,32 @@
                             <p>{{trans('Геодезисты')}}</p>
                         @endif
                 </a>
+                <div class="header__options-lang labgvidg-header">
+
+<div class="labgvidg-header__text active">
+@if (str_replace('_', '-', app()->getLocale()) == 'ru')
+RU
+@elseif (str_replace('_', '-', app()->getLocale()) == 'en')
+EN
+@elseif (str_replace('_', '-', app()->getLocale()) == 'oz')
+O'Z
+@endif
+    <div class="labgvidg-header__icon">
+        <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 4L0.5 0H8.5L4.5 4Z" fill="#101C5A"/>
+        </svg>
+    </div>
+</div>
+
+<div class="labgvidg-header__dropdown" style="display: none;">
+    <div class="labgvidg-header__dropdown-inner">
+    <a href="{{route('newlocale', ['newlang' => 'oz'])}}" class="labgvidg-header__dropdown-item">O’z</a>
+<a href="{{route('newlocale', ['newlang' => 'ru'])}}" class="labgvidg-header__dropdown-item">RU</a>
+<a href="{{route('newlocale', ['newlang' => 'en'])}}" class="labgvidg-header__dropdown-item">EN</a>
+    </div>
+</div>
+
+</div>
                 <div class="menu__icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="#101C5A"/>
@@ -173,6 +199,32 @@
                             <p>{{trans('Геодезисты')}}</p>
                         @endif
                             </a>
+                            <div class="header__options-lang labgvidg-header">
+
+<div class="labgvidg-header__text active">
+@if (str_replace('_', '-', app()->getLocale()) == 'ru')
+RU
+@elseif (str_replace('_', '-', app()->getLocale()) == 'en')
+EN
+@elseif (str_replace('_', '-', app()->getLocale()) == 'oz')
+O'Z
+@endif
+    <div class="labgvidg-header__icon">
+        <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 4L0.5 0H8.5L4.5 4Z" fill="#101C5A"/>
+        </svg>
+    </div>
+</div>
+
+<div class="labgvidg-header__dropdown" style="display: none;">
+    <div class="labgvidg-header__dropdown-inner">
+    <a href="{{route('newlocale', ['newlang' => 'oz'])}}" class="labgvidg-header__dropdown-item">O’z</a>
+<a href="{{route('newlocale', ['newlang' => 'ru'])}}" class="labgvidg-header__dropdown-item">RU</a>
+<a href="{{route('newlocale', ['newlang' => 'en'])}}" class="labgvidg-header__dropdown-item">EN</a>
+    </div>
+</div>
+
+</div>
                             <button class="hamburger-menu__close">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12.0002 10.586L16.9502 5.63599L18.3642 7.04999L13.4142 12L18.3642 16.95L16.9502 18.364L12.0002 13.414L7.05023 18.364L5.63623 16.95L10.5862 12L5.63623 7.04999L7.05023 5.63599L12.0002 10.586Z" fill="#101C5A"/>
@@ -226,32 +278,7 @@
                             <div class="hamburger-menu__options">
                                 <a href="tel:{{$options->tel1}}" class="hamburger-menu__options-tel">{{$options->tel1}}</a>
                                 <a href="mailto:{{$options->email}}" class="hamburger-menu__options-email">{{$options->email}}</a>
-                                <div class="header__options-lang labgvidg-header">
 
-                                    <div class="labgvidg-header__text active">
-                                    @if (str_replace('_', '-', app()->getLocale()) == 'ru')
-                                    RU
-                                @elseif (str_replace('_', '-', app()->getLocale()) == 'en')
-                                    EN
-                                @elseif (str_replace('_', '-', app()->getLocale()) == 'oz')
-                                    O'Z
-                               @endif
-                                        <div class="labgvidg-header__icon">
-                                            <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M4.5 4L0.5 0H8.5L4.5 4Z" fill="#101C5A"/>
-											</svg>
-                                        </div>
-                                    </div>
-
-                                    <div class="labgvidg-header__dropdown" style="display: none;">
-                                        <div class="labgvidg-header__dropdown-inner">
-                                        <a href="{{route('newlocale', ['newlang' => 'oz'])}}" class="labgvidg-header__dropdown-item">O’z</a>
-                                    <a href="{{route('newlocale', ['newlang' => 'ru'])}}" class="labgvidg-header__dropdown-item">RU</a>
-                                    <a href="{{route('newlocale', ['newlang' => 'en'])}}" class="labgvidg-header__dropdown-item">EN</a>
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
 

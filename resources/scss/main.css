@@ -5109,13 +5109,13 @@ ul.paggination li:last-child {
     font-size: 16px;
   }
   .header .labgvidg-header__dropdown {
-    left: 55px;
+    left: 20px;
   }
   .header .labgvidg-header__dropdown-inner {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 10px;
     grid-gap: 10px;
   }
@@ -5126,6 +5126,10 @@ ul.paggination li:last-child {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+  }
+  .header .header__options-lang {
+    margin-left: auto;
+    margin-right: 20px;
   }
   .main-title {
     line-height: initial;
