@@ -123,6 +123,11 @@
  }
  
  let d = document.forms["myForm"]["tel"];
+ document.getElementById("surname").oninput = trimSurname;
+ 
+
+    d.value = d.value.replace(/ /g,'');
+
  let regex = /^((8|\+7|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
  if ((d.value == "") || (!regex.test(d.value))) {
 
