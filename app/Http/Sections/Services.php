@@ -92,7 +92,7 @@ class Services extends Section
             $tab[] = AdminDisplay::tab(AdminForm::elements([
                 AdminFormElement::columns()
                 ->addColumn([
-                    AdminFormElement::text('ServiceTitle_ru', 'Название услуги'),
+                    AdminFormElement::text('ServiceTitle_ru', 'Название услуги')->required(),
                     AdminFormElement::html('<hr>'),
                     AdminFormElement::number('ServiceNumber_ru', 'Порядковый номер'),
                 ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
@@ -111,7 +111,7 @@ class Services extends Section
             $tab[] = AdminDisplay::tab(AdminForm::elements([
                 AdminFormElement::columns()
             ->addColumn([
-                AdminFormElement::text('ServiceTitle_oz', 'Название услуги'),
+                AdminFormElement::text('ServiceTitle_oz', 'Название услуги')->required(),
                 AdminFormElement::html('<hr>'),
                 AdminFormElement::number('ServiceNumber_oz', 'Порядковый номер'),
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
@@ -129,7 +129,7 @@ class Services extends Section
             $tab[] = AdminDisplay::tab(AdminForm::elements([
                 AdminFormElement::columns()
                 ->addColumn([
-                    AdminFormElement::text('ServiceTitle_en', 'Название услуги'),
+                    AdminFormElement::text('ServiceTitle_en', 'Название услуги')->required(),
                     AdminFormElement::html('<hr>'),
                     AdminFormElement::number('ServiceNumber_en', 'Порядковый номер'),
                 ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')
