@@ -45,12 +45,12 @@
         <div class="SingleObjects__photos_wrapper">
             <h2 class="SingleObjects__photos-title title">{{trans('фотогалерея')}}</h2>
             <div class="SingleObjects__photos_wrapper_slider">
-                <div class="SingleObjects__photos_list">
+                <div class="SingleObjects__photos_list popup-gallery">
                     <div class="swiper-wrapper">
                         @foreach(explode(",", $object->PhotosObject) as $image)
-                        <div class="SingleObjects__photos_list-item swiper-slide">
+                        <a href="/{{$image}}" class="SingleObjects__photos_list-item swiper-slide">
                             <img src="/{{$image}}" alt="{{$image}}">
-                        </div>
+                        </a>
                         @endforeach
 
                     </div>
@@ -84,7 +84,7 @@
                 <h2 class="title">{{trans('Другие Объекты')}} </h2>
                 <a href="{{route('objects')}}" class="linkMore btn-mobile-none">{{trans('Все проекты')}}</a>
             </div>
-            <div class="SingleObjects__more_list objects__list">
+            <div class="SingleObjects__more_list objects__list ">
 
 
                 @foreach($objects as $objectsing)

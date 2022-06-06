@@ -44,12 +44,12 @@
         <div class="SingleDepartaments__photos_wrapper SingleObjects__photos_wrapper">
             <h2 class="SingleDepartaments__photos-title SingleObjects__photos-title title">{{trans('фотогалерея')}}</h2>
             <div class="SingleDepartaments__photos_wrapper_slider SingleObjects__photos_wrapper_slider">
-                <div class="SingleDepartaments__photos_list SingleObjects__photos_list">
+                <div class="SingleDepartaments__photos_list SingleObjects__photos_list popup-gallery">
                     <div class="swiper-wrapper">
                         @foreach(explode(",", $departament->departamentsPhotos) as $image)
-                            <div class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
+                            <a href="/{{$image}}" class="SingleDepartaments__photos_list-itme SingleObjects__photos_list-item swiper-slide">
                                 <img src="/{{$image}}" alt="$image" />
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                     <div class="slaider__buttons buttons-slaider">
@@ -81,7 +81,7 @@
                 <h2 class="title">{{trans('Другие отделы')}}</h2>
                 <a href="{{route('departments')}}" class="linkMore btn-mobile-none">{{trans('Все отделы')}}</a>
             </div>
-            <div class="SingleDepartaments__more_list MainDepartaments__list">
+            <div class="SingleDepartaments__more_list MainDepartaments__list ">
 
             @foreach($departments as $el)
             <a class="MainDepartaments__list_item" href="{{ route('departments.show',['id'=>$el->id]) }}">

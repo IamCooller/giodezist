@@ -432,8 +432,10 @@ ul.breadcrumb li a:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-width: 480px;
-  grid-gap: 5px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  grid-gap: 20px;
 }
 
 .header__menu a {
@@ -5051,9 +5053,6 @@ ul.paggination li:last-child {
 @media (max-width: 1400px) {
   .header__body {
     font-size: 12px;
-  }
-  .header__menu {
-    max-width: 320px;
   }
   .header__options {
     max-width: 220px;
