@@ -91,7 +91,7 @@ class TabDocuments extends Section
 
             $tab = [];
             $tab[] = AdminDisplay::tab(AdminForm::elements([
-                AdminFormElement::text('TablicenseTitle_ru', 'Название услуги'),
+                AdminFormElement::text('TablicenseTitle_ru', 'Название услуги')->required(),
                 AdminFormElement::html('<hr>'),
                 AdminFormElement::number('TablicenseNumber_ru', 'Порядковый номер'),
            
@@ -102,7 +102,7 @@ class TabDocuments extends Section
         $tabs->setTabs(function ($id) {
             $tab = [];
             $tab[] = AdminDisplay::tab(AdminForm::elements([
-                AdminFormElement::text('TablicenseTitle_oz', 'Название услуги'),
+                AdminFormElement::text('TablicenseTitle_oz', 'Название услуги')->required(),
                 AdminFormElement::html('<hr>'),
                 AdminFormElement::number('TablicenseNumber_oz', 'Порядковый номер'),
             ]))->setLabel('OZ');
@@ -112,7 +112,7 @@ class TabDocuments extends Section
         $tabs->setTabs(function ($id) {
             $tab = [];
             $tab[] = AdminDisplay::tab(AdminForm::elements([
-                AdminFormElement::text('TablicenseTitle_en', 'Название услуги'),
+                AdminFormElement::text('TablicenseTitle_en', 'Название услуги')->required(),
                 AdminFormElement::html('<hr>'),
                 AdminFormElement::number('TablicenseNumber_en', 'Порядковый номер'),
                 
