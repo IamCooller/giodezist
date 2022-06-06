@@ -272,7 +272,7 @@ return [
             'allowedContent'  => true,
             'extraPlugins'    => 'uploadimage,image2,justify,youtube,uploadfile',
             
-            'uploadUrl' => 'public/images/uploads',
+            'imagesUploadDirectory' => 'images/uploads',
             /*
              * WARNING!!!! CKEDITOR on D & D and UploadImageDialog
              * BY DEFAULT IMAGES WILL STORE TO imagesUploadDirectory = /images/uploads
