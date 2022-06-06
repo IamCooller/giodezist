@@ -7,7 +7,7 @@
             <div class="container" data-aos="fade-down">
 
                 <ul class="breadcrumb">
-                    <li><a href="route('home')">{{trans('Главная')}}</a></li>
+                    <li><a href="{{route('home')}}">{{trans('Главная')}}</a></li>
                     <li><span>{{trans('Вакансии')}}</span></li>
                 </ul>
                 <div class="vacancy__wrapper">
