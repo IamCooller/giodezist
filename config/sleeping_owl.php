@@ -156,7 +156,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'imagesUploadDirectory' => 'public/images/uploads',
+    'imagesUploadDirectory' => 'images/uploads',
 
     /*
     |--------------------------------------------------------------------------
@@ -201,7 +201,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'filesUploadDirectory' => 'public/files/uploads',
+    'filesUploadDirectory' => 'files/uploads',
 
     /*
     |--------------------------------------------------------------------------
@@ -272,8 +272,6 @@ return [
             'allowedContent'  => true,
             'extraPlugins'    => 'uploadimage,image2,justify,youtube,uploadfile',
             
-            'uploadUrl' => 'images/uploads',
-            'filebrowserUploadUrl' => 'images/uploads',
             /*
              * WARNING!!!! CKEDITOR on D & D and UploadImageDialog
              * BY DEFAULT IMAGES WILL STORE TO imagesUploadDirectory = /images/uploads
