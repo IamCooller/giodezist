@@ -48,7 +48,7 @@ class About extends Section
      *
      * @return DisplayInterface
      */
-    public function onDisplay($payload = [])
+    public function onDisplay()
     {
         return $this->fireEdit(1);
 
@@ -60,7 +60,7 @@ class About extends Section
      *
      * @return FormInterface
      */
-    public function onEdit($id = null, $payload = [])
+    public function onEdit($id = null)
     {
         $tabs = AdminDisplay::tabbed();
 
@@ -154,28 +154,11 @@ class About extends Section
 
         return $form;
     }
-
     /**
      * @return FormInterface
      */
-    public function onCreate($payload = [])
+    public function onCreate()
     {
-        return $this->onEdit(null, $payload);
-    }
-
-    /**
-     * @return bool
-     */
-    public function isDeletable(Model $model)
-    {
-        return true;
-    }
-
-    /**
-     * @return void
-     */
-    public function onRestore($id)
-    {
-        // remove if unused
+        return $this->onEdit(null);
     }
 }
