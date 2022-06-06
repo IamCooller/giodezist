@@ -138,7 +138,7 @@ class Objects extends Model
         return $this->{$column};
     }
   
-    public function setPhotosObjectRuAttribute($images_ru)
+/*     public function setPhotosObjectRuAttribute($images_ru)
     {
         $this->attributes['PhotosObject_ru'] = implode(',', $images_ru);
     }
@@ -150,5 +150,5 @@ class Objects extends Model
     {
      
         $this->attributes['PhotosObject_en'] = implode(',', $images_en);
-    }
+    } */
 }

@@ -13,11 +13,11 @@
                 </ul>
                 <div class="Gallery__wrapper">
                     <h2 class="title">{{$photo->PhotosTitle}}</h2>
-                    <div class="SingleGallery__list popup-gallery Gallery__list">
+                    <div class="SingleGallery__list MainLicense__list Gallery__list">
                        @if($photo->PhotosContent)
-                        @foreach(explode(",", $photo->PhotosContent) as $member)
-                        <a href="/{{$member}}" class="SingleGallery__list_item hoverImgHref">
-                            <img src="/{{$member}}" alt="/{{$member}}" class="hoverImg">
+                       @foreach(json_decode($photo->PhotosContent) as $member)
+                       <a href="/{{$member->url}}" title="{{ $member->title }}" data-description="{{ $member->desc }}" class="SingleGallery__list_item hoverImgHref">
+                            <img src="/{{$member->url}}" alt="/{{$member->title}}" class="hoverImg">
                         </a>
                 @endforeach
                     @endif

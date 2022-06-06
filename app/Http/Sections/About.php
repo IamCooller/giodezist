@@ -86,7 +86,7 @@ class About extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('aboutPhotos_ru', 'Изображения'),
+                AdminFormElement::files('aboutPhotos_ru', 'Изображения'),
             ]))->setLabel('RU');
                 return $tab;
         });
@@ -112,7 +112,7 @@ class About extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('aboutPhotos_oz', 'Изображения'),
+                AdminFormElement::files('aboutPhotos_oz', 'Изображения'),
             ]))->setLabel('OZ');
             return $tab;
         });
@@ -139,7 +139,7 @@ class About extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('aboutPhotos_en', 'Изображения'),
+                AdminFormElement::files('aboutPhotos_en', 'Изображения'),
             ]))->setLabel('EN');
             return $tab;
         });

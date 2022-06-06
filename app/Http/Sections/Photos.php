@@ -115,7 +115,7 @@ class Photos extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('PhotosContent_ru', 'Изображения'),
+                AdminFormElement::files('PhotosContent_ru', 'Изображения'),
             ]))->setLabel('RU');
                 return $tab;
         });
@@ -141,7 +141,7 @@ class Photos extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('PhotosContent_oz', 'Изображения'),
+                AdminFormElement::files('PhotosContent_oz', 'Изображения'),
             ]))->setLabel('OZ');
             return $tab;
         });
@@ -167,7 +167,7 @@ class Photos extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('PhotosContent_en', 'Изображения'),
+                AdminFormElement::files('PhotosContent_en', 'Изображения'),
             ]))->setLabel('EN');
             return $tab;
         });

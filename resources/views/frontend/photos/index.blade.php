@@ -26,7 +26,7 @@
                                 <div class="Gallery__list_item-count">
                                     <i data-svg="/img/photos.svg"></i>  
                                     @if($photo->PhotosContent)
-                                    {{count(explode(",", $photo->PhotosContent))}}
+                                    {{count(array(json_decode($photo->PhotosContent))[0])}}
                                     @else
                                         0
                                     @endif

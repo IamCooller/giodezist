@@ -109,7 +109,7 @@ class Photos extends Model
         return preg_split('/,/', $value, -1, PREG_SPLIT_NO_EMPTY);
     }
 
-    public function setPhotosContentRuAttribute($images_ru)
+   /*  public function setPhotosContentRuAttribute($images_ru)
     {
         $this->attributes['PhotosContent_ru'] = implode(',', $images_ru);
     }
@@ -122,7 +122,7 @@ class Photos extends Model
      
         $this->attributes['PhotosContent_en'] = implode(',', $images_en);
     }
-
+ */
     public function getPhotosImgAttribute()
     {
         $locale = App::getLocale();

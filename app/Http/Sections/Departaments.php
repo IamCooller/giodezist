@@ -108,7 +108,7 @@ class Departaments extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('departamentsPhotos_ru', 'Изображения'),
+                AdminFormElement::files('departamentsPhotos_ru', 'Изображения'),
             ]))->setLabel('RU');
                 return $tab;
         });
@@ -134,7 +134,7 @@ class Departaments extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('departamentsPhotos_oz', 'Изображения'),
+                AdminFormElement::files('departamentsPhotos_oz', 'Изображения'),
             ]))->setLabel('OZ');
             return $tab;
         });
@@ -161,7 +161,7 @@ class Departaments extends Section
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
-                AdminFormElement::images('departamentsPhotos_en', 'Изображения'),
+                AdminFormElement::files('departamentsPhotos_en', 'Изображения'),
             ]))->setLabel('EN');
             return $tab;
         });

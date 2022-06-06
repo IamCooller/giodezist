@@ -124,7 +124,7 @@ class Departaments extends Model
 
 
    
-    public function setDepartamentsPhotosRuAttribute($images_ru)
+   /*  public function setDepartamentsPhotosRuAttribute($images_ru)
     {
         $this->attributes['departamentsPhotos_ru'] = implode(',', $images_ru);
     }
@@ -137,5 +137,5 @@ class Departaments extends Model
      
         $this->attributes['departamentsPhotos_en'] = implode(',', $images_en);
     }
-
+ */
 }

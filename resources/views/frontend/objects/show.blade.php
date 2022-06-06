@@ -45,13 +45,13 @@
         <div class="SingleObjects__photos_wrapper">
             <h2 class="SingleObjects__photos-title title">{{trans('фотогалерея')}}</h2>
             <div class="SingleObjects__photos_wrapper_slider">
-                <div class="SingleObjects__photos_list popup-gallery">
+                <div class="SingleObjects__photos_list MainLicense__list">
                     <div class="swiper-wrapper">
-                        @foreach(explode(",", $object->PhotosObject) as $image)
-                        <a href="/{{$image}}" class="SingleObjects__photos_list-item swiper-slide">
-                            <img src="/{{$image}}" alt="{{$image}}">
+                        @foreach(json_decode($object->PhotosObject) as $member)
+                       <a href="/{{$member->url}}" title="{{ $member->title }}" data-description="{{ $member->desc }}" class="SingleObjects__photos_list-item swiper-slide">
+                            <img src="/{{$member->url}}" alt="/{{$member->title}}">
                         </a>
-                        @endforeach
+                @endforeach
 
                     </div>
                     <div class="slaider__buttons buttons-slaider">

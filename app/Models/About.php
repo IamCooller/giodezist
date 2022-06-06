@@ -124,7 +124,7 @@ class About extends Model
 
 
    
-    public function setAboutPhotosRuAttribute($images_ru)
+/*     public function setAboutPhotosRuAttribute($images_ru)
     {
         $this->attributes['aboutPhotos_ru'] = implode(',', $images_ru);
     }
@@ -136,6 +136,6 @@ class About extends Model
     {
      
         $this->attributes['aboutPhotos_en'] = implode(',', $images_en);
-    }
+    } */
 
 }

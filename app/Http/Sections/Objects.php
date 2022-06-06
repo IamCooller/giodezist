@@ -112,7 +112,7 @@ class Objects extends Section implements Initializable
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6')
                 ->addColumn([
                     AdminFormElement::wysiwyg('ContentObject_ru', 'Контент'),
-                    AdminFormElement::images('PhotosObject_ru', 'Галерея'),
+                    AdminFormElement::files('PhotosObject_ru', 'Галерея'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
@@ -143,7 +143,7 @@ class Objects extends Section implements Initializable
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6')
                 ->addColumn([
                     AdminFormElement::wysiwyg('ContentObject_oz', 'Контент'),
-                    AdminFormElement::images('PhotosObject_oz', 'Галерея'),
+                    AdminFormElement::files('PhotosObject_oz', 'Галерея'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
@@ -171,7 +171,7 @@ class Objects extends Section implements Initializable
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6')
                 ->addColumn([
                     AdminFormElement::wysiwyg('ContentObject_en', 'Контент'),
-                    AdminFormElement::images('PhotosObject_en', 'Галерея'),
+                    AdminFormElement::files('PhotosObject_en', 'Галерея'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
