@@ -38,6 +38,7 @@
     </div>
 </div>
 @endif
+@if(json_decode($About->aboutPhotos))
 <div class="AboutPhotos SingleDepartaments__photos SingleObjects__photos">
     <div class="container" data-aos="fade-down">
         <div class="SingleDepartaments__photos_wrapper SingleObjects__photos_wrapper">
@@ -74,6 +75,6 @@
         </div>
     </div>
 </div>
-
+@endif
 </section>
 @endsection

@@ -39,7 +39,8 @@
     </div>
 </div>
 @endif
-@if($object->PhotosObject)
+@if(json_decode($object->PhotosObject))
+
 <div class="SingleObjects__photos">
     <div class="container" data-aos="fade-down">
         <div class="SingleObjects__photos_wrapper">

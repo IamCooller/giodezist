@@ -353,7 +353,7 @@ ul.breadcrumb li a:hover {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 .header__menu a {
   font-style: normal;

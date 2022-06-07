@@ -38,7 +38,7 @@
     </div>
 </div>
 @endif
-@if($departament->departamentsPhotos)
+@if(json_decode($departament->departamentsPhotos))
 <div class="SingleDepartaments__photos SingleObjects__photos">
     <div class="container" data-aos="fade-down">
         <div class="SingleDepartaments__photos_wrapper SingleObjects__photos_wrapper">
