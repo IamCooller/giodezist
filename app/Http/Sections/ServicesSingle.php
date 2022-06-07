@@ -173,7 +173,7 @@ class ServicesSingle extends Section
                     AdminFormElement::wysiwyg('BlockOneService_en', 'Первый блок услуги'),
                     AdminFormElement::wysiwyg('BlockTwoService_en', 'Второй блок услуги'),
                     AdminFormElement::image('BlockTwoImgService_en', 'Изображение второго блока'),
-                    AdminFormElement::text('BlockThreeService_en', 'Третий блок услуги'),
+                    AdminFormElement::wysiwyg('BlockThreeService_en', 'Третий блок услуги'),
                     AdminFormElement::html('<hr>'),
                     
                 ], 'col-xs-12 col-sm-6 col-md-6 col-lg-6'),
