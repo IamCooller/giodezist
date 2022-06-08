@@ -41,7 +41,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     }
 
     //формируем полный URL
-    $url = Request::root().implode("/", $segments);
+    $url = env('APP_URL').implode("/", $segments);
     
     //если были еще GET-параметры - добавляем их
     if(parse_url($referer, PHP_URL_QUERY)){    
