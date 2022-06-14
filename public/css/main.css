@@ -401,11 +401,11 @@ ul.breadcrumb li a:hover {
   justify-content: space-between;
   width: 100%;
   max-width: 330px;
-  margin-right: 46px;
+  margin-right: 25px;
 }
 @media (max-width: 1430px) {
   .header__options {
-    margin-right: calc( 12px + 34 * ((100vw - 320px) / 1110));
+    margin-right: calc( 12px + 13 * ((100vw - 320px) / 1110));
   }
 }
 .header__options-email {
@@ -446,6 +446,8 @@ ul.breadcrumb li a:hover {
   width: 100%;
   transition: 0.3s all;
   justify-content: center;
+  max-width: 205px;
+  padding: 0 24px;
 }
 @media (max-width: 1430px) {
   .header__button {
