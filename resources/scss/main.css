@@ -2133,6 +2133,10 @@ ul.breadcrumb li a:hover {
   color: #101C5A;
 }
 
+.SingleServices__two_wrapper_right p img, .SingleServices__two_wrapper_right a img, .SingleServices__two_wrapper_right span img {
+  height: auto;
+}
+
 .SingleServices__two_wrapper_right img {
   height: auto;
 }
