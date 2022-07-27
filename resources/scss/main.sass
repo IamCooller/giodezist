@@ -106,7 +106,7 @@ ul.breadcrumb-single li
 		display: flex
 		align-items: center
 		justify-content: center
-		height: auto
+		height: 100%
 		color: green
 #successFormError
 	display: block
@@ -121,7 +121,7 @@ ul.breadcrumb-single li
 		color: red
 		align-items: center
 		justify-content: center
-		height: auto
+		height: 100%
 	 
 
 ul.breadcrumb li+li:before 
@@ -210,7 +210,7 @@ ul.breadcrumb li a:hover
 			justify-content: space-between
 			width: 100%
 		&_right
-			height: auto
+			height: 100%
 			width: 100%
 			max-width: 242px
 			display: flex
@@ -348,7 +348,7 @@ ul.breadcrumb li a:hover
 		display: flex
 		flex-direction: column
 		justify-content: space-between
-		height: auto
+		height: 100%
 		max-height: 160px
 		.has-childs
 			display: flex
@@ -394,13 +394,13 @@ ul.breadcrumb li a:hover
 		display: flex
 		flex-direction: column
 		justify-content: space-between
-		height: auto
+		height: 100%
 
 	&__options
 		display: flex
 		flex-direction: column
 		max-height: 88px
-		height: auto
+		height: 100%
 		justify-content: space-between
 		&-tel
 			font-style: normal
@@ -532,7 +532,7 @@ ul.breadcrumb li a:hover
 			height: 410px
 			&-img
 				width: 100%
-				height: auto
+				height: 100%
 				max-width: 181px
 				max-height: 181px
 				border-radius: 100px
@@ -562,7 +562,7 @@ ul.breadcrumb li a:hover
 				left: 0
 				top: 0
 				width: 50%
-				height: auto
+				height: 100%
 		&_right
 			@include adaptiv-value('padding', 120, 32, 1)
 			@include adaptiv-value('padding-bottom', 300, 32, 1)
@@ -645,7 +645,7 @@ ul.breadcrumb li a:hover
 		p
 			font-style: normal
 			font-weight: 500
-			line-height: auto
+			line-height: 100%
 			color: $black
 		&-title
 			@include adaptiv-value('font-size', 26, 16, 1)
@@ -746,9 +746,9 @@ ul.breadcrumb li a:hover
 		&_left
 			padding: 100px 0
 		&_right
-			height: auto
+			height: 100%
 			p
-				height: auto
+				height: 100%
 				display: block
 	&-title
 		font-style: normal
@@ -823,11 +823,11 @@ ul.breadcrumb li a:hover
 			&-item
 				display: block
 				overflow: hidden
-				height: auto
+				height: 100%
 				width: 100%
 				img
 					width: 100%
-					height: auto
+					height: 100%
 
 		&-link
 			font-style: normal
@@ -937,9 +937,9 @@ ul.breadcrumb li a:hover
 		grid-gap: 15px
 		&_img
 			max-width: 150px
-			max-height: auto
+			max-height: 100%
 			width: 100%
-			height: auto
+			height: 100%
 			img	
 				width: 100%
 				height: auto
@@ -1085,6 +1085,8 @@ ul.breadcrumb li a:hover
 					line-height: 150%
 					font-feature-settings: 'pnum' on, 'lnum' on
 					color: $black
+				img
+					height: auto
 	&__three
 		position: relative
 		@include adaptiv-value('padding-bottom', 135, 32, 1)
@@ -1238,7 +1240,7 @@ ul.breadcrumb li a:hover
 			font-style: normal
 			font-weight: 500
 			font-size: 26px
-			line-height: auto
+			line-height: 100%
 			color: $black
 			margin-bottom: 12px
 			transition: .3s all
@@ -1279,12 +1281,12 @@ ul.paggination
 			font-style: normal
 			font-weight: 500
 			font-size: 24px
-			line-height: auto
+			line-height: 100%
 			color: $black
 			border-radius: 100px
 			display: flex
 			width: 100%
-			height: auto
+			height: 100%
 			align-items: center
 			justify-content: center
 			&.active
@@ -1305,7 +1307,7 @@ ul.paggination
 		&_right
 			min-height: 450px
 			img
-				height: auto
+				height: 100%
 				position: absolute
 				max-width: 50%
 				width: auto
@@ -1414,7 +1416,7 @@ ul.paggination
 			position: relative
 			flex: 0 0 40px
 			padding-left: 32px
-			height: auto
+			height: 100%
 
 		.swiper-pagination
 			position: absolute
@@ -1507,10 +1509,10 @@ ul.paggination
 			display: grid
 			grid-template-columns: 1fr 1fr
 			background: #F4F5F9
-			height: auto
+			height: 100%
 			&_img
 					width: 100%
-					height: auto
+					height: 100%
 					display: block
 					margin: auto
 					object-fit: cover
@@ -1520,7 +1522,7 @@ ul.paggination
 				display: flex
 				flex-direction: column
 				justify-content: space-between
-				height: auto
+				height: 100%
 			&-title
 				font-style: normal
 				font-weight: 500
@@ -1564,7 +1566,7 @@ ul.paggination
 			position: relative
 			flex: 0 0 40px
 			padding-left: 32px
-			height: auto
+			height: 100%
 
 		.swiper-pagination
 			position: absolute
@@ -2001,11 +2003,11 @@ ul.paggination
 	&__list
 		a
 			width: 100%
-			height: auto
+			height: 100%
 			iframe
 				width: 100%
 				min-height: 220px
-				height: auto
+				height: 100%
 
 ////////////MainDepartaments/////////
 .MainDepartaments
@@ -2047,7 +2049,7 @@ ul.paggination
 				img
 					width: 100%
 					
-					height: auto
+					height: 100%
 					transition: .3s all ease-in-out
 					object-fit: cover
 			&-title
@@ -2313,7 +2315,7 @@ ul.paggination
 						color: red
 					& >
 						div
-							height: auto
+							height: 100%
 							display: flex
 							align-items: center  
 							@include adaptiv-value('font-size', 16, 14, 1)
@@ -2328,13 +2330,13 @@ ul.paggination
 					& > button
 						float: right
 						width: 24px
-						height: auto
+						height: 100%
 					& input[type=file]
 						position: absolute
 						left: 0
 						top: 0
 						width: 100%
-						height: auto
+						height: 100%
 						opacity: 0
 						cursor: pointer
 			textarea
@@ -2406,7 +2408,7 @@ ul.paggination
 				top: 0
 				right: 0
 				width: 50%
-				height: auto
+				height: 100%
 	&__informations
 		display: flex
 		flex-direction: column
@@ -2551,7 +2553,7 @@ ul.paggination
 			width: 100%
 			display: block
 			max-width: 318px
-			height: auto
+			height: 100%
 		&_text
 			display: flex
 			flex-direction: column
@@ -2672,7 +2674,7 @@ ul.paggination
 		&_right
 			img
 				width: 100%
-				height: auto
+				height: 100%
 	&__bottom
 		max-width: 942px
 		margin: 0 auto
