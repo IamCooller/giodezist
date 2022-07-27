@@ -336,7 +336,7 @@ ul.breadcrumb li a:hover {
 }
 
 .header__body_right {
-  height: 100%;
+  height: auto;
   width: 100%;
   max-width: 242px;
   display: -webkit-box;
@@ -573,7 +573,7 @@ ul.breadcrumb li a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  height: auto;
   max-height: 160px;
 }
 
@@ -661,7 +661,7 @@ ul.breadcrumb li a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  height: auto;
 }
 
 .hamburger-menu__options {
@@ -673,7 +673,7 @@ ul.breadcrumb li a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   max-height: 88px;
-  height: 100%;
+  height: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -910,7 +910,7 @@ ul.breadcrumb li a:hover {
 
 .services__list_item-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 181px;
   max-height: 181px;
   border-radius: 100px;
@@ -962,7 +962,7 @@ ul.breadcrumb li a:hover {
   left: 0;
   top: 0;
   width: 50%;
-  height: 100%;
+  height: auto;
 }
 
 .about__wrapper_right {
@@ -1144,7 +1144,7 @@ ul.breadcrumb li a:hover {
 .projects__item p {
   font-style: normal;
   font-weight: 500;
-  line-height: 100%;
+  line-height: auto;
   color: #101C5A;
 }
 
@@ -1514,13 +1514,13 @@ ul.breadcrumb li a:hover {
 .footer__projects_list-item {
   display: block;
   overflow: hidden;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
 .footer__projects_list-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .footer__projects-link {
@@ -1755,7 +1755,7 @@ ul.breadcrumb li a:hover {
   max-width: 150px;
   max-height: 150px;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .MainServices__item_img img {
@@ -1840,7 +1840,7 @@ ul.breadcrumb li a:hover {
 }
 
 .SingleServices__main_right img {
-  height: 100%;
+  height: auto;
   position: absolute;
   width: 50%;
   right: 0;
@@ -1989,7 +1989,7 @@ ul.breadcrumb li a:hover {
 .SingleServices__two_wrapper_left img {
   position: relative;
   bottom: -10%;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -2337,7 +2337,7 @@ ul.breadcrumb li a:hover {
   font-style: normal;
   font-weight: 500;
   font-size: 26px;
-  line-height: 100%;
+  line-height: auto;
   color: #101C5A;
   margin-bottom: 12px;
   -webkit-transition: .3s all;
@@ -2399,14 +2399,14 @@ ul.paggination li a {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  line-height: 100%;
+  line-height: auto;
   color: #101C5A;
   border-radius: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2443,7 +2443,7 @@ ul.paggination li:last-child {
 }
 
 .SingleObjects__main_right img {
-  height: 100%;
+  height: auto;
   position: absolute;
   width: 50%;
   right: 0;
@@ -2648,7 +2648,7 @@ ul.paggination li:last-child {
       -ms-flex: 0 0 40px;
           flex: 0 0 40px;
   padding-left: 32px;
-  height: 100%;
+  height: auto;
 }
 
 .SingleObjects__photos .swiper-pagination {
@@ -2822,12 +2822,12 @@ ul.paggination li:last-child {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   background: #F4F5F9;
-  height: 100%;
+  height: auto;
 }
 
 .MainNews__slider-item_img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   margin: auto;
   -o-object-fit: cover;
@@ -2848,7 +2848,7 @@ ul.paggination li:last-child {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  height: auto;
 }
 
 .MainNews__slider-item-title {
@@ -2934,7 +2934,7 @@ ul.paggination li:last-child {
       -ms-flex: 0 0 40px;
           flex: 0 0 40px;
   padding-left: 32px;
-  height: 100%;
+  height: auto;
 }
 
 .MainNews__slider .swiper-pagination {
@@ -3766,7 +3766,7 @@ ul.paggination li:last-child {
 
 .MainDepartaments__list_item-img img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
   -o-object-fit: cover;
@@ -4222,7 +4222,7 @@ ul.paggination li:last-child {
 }
 
 .vacancy__form_wrapper .file_upload > div {
-  height: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4251,7 +4251,7 @@ ul.paggination li:last-child {
 .vacancy__form_wrapper .file_upload > button {
   float: right;
   width: 24px;
-  height: 100%;
+  height: auto;
 }
 
 .vacancy__form_wrapper .file_upload input[type=file] {
@@ -4259,7 +4259,7 @@ ul.paggination li:last-child {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   opacity: 0;
   cursor: pointer;
 }
@@ -4340,7 +4340,7 @@ ul.paggination li:last-child {
   top: 0;
   right: 0;
   width: 50%;
-  height: 100%;
+  height: auto;
 }
 
 .MainContacts__informations {
@@ -4548,7 +4548,7 @@ ul.paggination li:last-child {
   width: 100%;
   display: block;
   max-width: 318px;
-  height: 100%;
+  height: auto;
 }
 
 .ErrorPage__wrapper_text {
@@ -4760,7 +4760,7 @@ ul.paggination li:last-child {
 
 .TaskPage__wrapper_right img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .TaskPage__bottom {
