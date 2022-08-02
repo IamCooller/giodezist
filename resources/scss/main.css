@@ -2081,10 +2081,8 @@ ul.breadcrumb li a:hover {
 
 .SingleServices__two_wrapper_left img {
   position: relative;
-  bottom: -10%;
   height: auto;
   width: 100%;
-  aspect-ratio: 2/3;
 }
 
 .SingleServices__two_wrapper_right {
