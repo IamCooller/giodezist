@@ -1087,6 +1087,26 @@ ul.breadcrumb li a:hover
 					color: $black
 					img
 						height: auto
+				ul	
+					margin-top: 20px
+					li
+						font-style: normal
+						font-weight: 500
+						font-size: 18px
+						line-height: 21px
+						color: $black
+						position: relative
+						padding-left: 40px
+						margin-bottom: 24px
+						&::before
+							content: ''
+							background: no-repeat center url("data:image/svg+xml,%3Csvg width='23' height='29' viewBox='0 0 23 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='8.64286' cy='14.5' rx='2.35714' ry='2.38235' fill='white'/%3E%3Cpath d='M16.2857 14.5C16.2857 18.7821 12.8539 22.2353 8.64286 22.2353C4.43183 22.2353 1 18.7821 1 14.5C1 10.2179 4.43183 6.76471 8.64286 6.76471C12.8539 6.76471 16.2857 10.2179 16.2857 14.5Z' stroke='%233243A0' stroke-width='2'/%3E%3Cpath d='M8.64285 28C16.0198 28 22 21.9558 22 14.5C22 7.04416 16.0198 1 8.64285 1' stroke='%233243A0' stroke-width='2'/%3E%3C/svg%3E%0A")
+							width: 23px
+							height: 29px
+							position: absolute
+							left: 0
+							top: 50%
+							transform: translate(0, -50%)
 				img
 					height: auto
 	&__three
