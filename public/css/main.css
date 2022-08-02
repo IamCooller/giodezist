@@ -1476,6 +1476,8 @@ ul.breadcrumb li a:hover {
   position: absolute;
   width: 50%;
   right: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .SingleServices-title {
   color: #fff;
@@ -1597,6 +1599,7 @@ ul.breadcrumb li a:hover {
   bottom: -10%;
   height: auto;
   width: 100%;
+  aspect-ratio: 2/3;
 }
 .SingleServices__two_wrapper_right {
   padding-top: 60px;
