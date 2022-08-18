@@ -1469,15 +1469,14 @@ ul.breadcrumb li a:hover {
   grid-template-columns: 1fr 1fr;
 }
 .SingleServices__main_right {
-  height: 450px;
+  min-height: 450px;
 }
 .SingleServices__main_right img {
-  height: auto;
+  height: 100%;
   position: absolute;
-  width: 50%;
+  max-width: 50%;
   right: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: auto;
 }
 .SingleServices-title {
   color: #fff;
