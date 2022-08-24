@@ -2701,15 +2701,16 @@ ul.paggination
 	&__bottom
 		max-width: 942px
 		margin: 0 auto
-		text-align: center
 		@include adaptiv-value('padding-top', 188, 32, 1)
 		@include adaptiv-value('padding-bottom', 155, 32, 1)
+		ul
+			li
+				list-style: disc
 		p
 			font-style: normal
 			font-weight: 500
 			@include adaptiv-value('font-size', 24, 16, 1)
 			line-height: 150%
-			text-align: center
 			font-feature-settings: 'pnum' on, 'lnum' on
 			color: #101C5A
 

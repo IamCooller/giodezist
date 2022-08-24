@@ -4986,7 +4986,6 @@ ul.paggination li:last-child {
 .TaskPage__bottom {
   max-width: 942px;
   margin: 0 auto;
-  text-align: center;
   padding-top: 188px;
   padding-bottom: 155px;
 }
@@ -5003,12 +5002,15 @@ ul.paggination li:last-child {
   }
 }
 
+.TaskPage__bottom ul li {
+  list-style: disc;
+}
+
 .TaskPage__bottom p {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 150%;
-  text-align: center;
   -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
           font-feature-settings: 'pnum' on, 'lnum' on;
   color: #101C5A;
