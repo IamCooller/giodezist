@@ -2584,7 +2584,20 @@ ul.paggination
 		@include adaptiv-value('padding-bottom', 155, 32, 1)
 		ul
 			li
-				list-style: disc
+				position: relative
+				padding-left: 45px
+				color: #101C5A
+				margin-bottom: 58px
+				&:last-of-type
+						margin-bottom: 0
+				&:before
+					content: ""
+					background: no-repeat center url("data:image/svg+xml,%3Csvg width='23' height='29' viewBox='0 0 23 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='8.6423' cy='14.5' rx='2.35714' ry='2.38235' fill='white'/%3E%3Cpath d='M16.2857 14.5C16.2857 18.7821 12.8539 22.2353 8.64286 22.2353C4.43183 22.2353 1 18.7821 1 14.5C1 10.2179 4.43183 6.76471 8.64286 6.76471C12.8539 6.76471 16.2857 10.2179 16.2857 14.5Z' stroke='%233243A0' stroke-width='2'/%3E%3Cpath d='M8.64453 28C16.0215 28 22.0017 21.9558 22.0017 14.5C22.0017 7.04416 16.0215 1 8.64453 1' stroke='%233243A0' stroke-width='2'/%3E%3C/svg%3E%0A")
+					position: absolute
+					width: 23px
+					height: 29px
+					top: 0
+					left: 0
 		p
 			font-style: normal
 			font-weight: 500
