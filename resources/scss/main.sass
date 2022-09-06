@@ -463,9 +463,14 @@ ul.breadcrumb li a:hover
 	background: url(../img/MainPage/main-bg.png) no-repeat center center fixed
 	background-size: cover
 	position: relative
+	&__wrapper
+		height: 100vh
+		display: flex
+		flex-direction: column
+		justify-content: space-between
 	&-title
 		@include adaptiv-value('padding-top', 177, 49, 1)
-		@include adaptiv-value('padding-bottom', 169, 63, 1)
+		//@include adaptiv-value('padding-bottom', 169, 63, 1)
 		font-style: normal
 		font-weight: 500
 		@include adaptiv-value('font-size', 70, 24, 1)

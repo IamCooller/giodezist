@@ -639,9 +639,14 @@ ul.breadcrumb li a:hover {
   background-size: cover;
   position: relative;
 }
+.main__wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .main-title {
   padding-top: 177px;
-  padding-bottom: 169px;
   font-style: normal;
   font-weight: 500;
   font-size: 70px;
@@ -653,11 +658,6 @@ ul.breadcrumb li a:hover {
 @media (max-width: 1430px) {
   .main-title {
     padding-top: calc( 49px + 128 * ((100vw - 320px) / 1110));
-  }
-}
-@media (max-width: 1430px) {
-  .main-title {
-    padding-bottom: calc( 63px + 106 * ((100vw - 320px) / 1110));
   }
 }
 @media (max-width: 1430px) {
